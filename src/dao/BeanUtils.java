@@ -18,28 +18,28 @@ public class BeanUtils {
 	static final String DEFAULT_DATETIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
 	/**
-	 * ½«ÇëÇó²ÎÊı×ª»»ÉèÖÃµ½beanµÄ¸÷¸ö×Ö¶ÎÖĞ
+	 * å°†è¯·æ±‚å‚æ•°è½¬æ¢è®¾ç½®åˆ°beançš„å„ä¸ªå­—æ®µä¸­
 	 * @param request
 	 * @param t
 	 * @return
 	 */
 	public static <T> T toBean(ServletRequest request, T t) {
-		//ÊäÈëµÄÖµ¶ÔÏótÎª¿ÕÔòÍË³ö
+		//è¾“å…¥çš„å€¼å¯¹è±¡tä¸ºç©ºåˆ™é€€å‡º
 		if (t == null)
 			return t;
 		for (Field f : getAllFields(t.getClass())) {
-			//»ñÈ¡²ÎÊıÖµ
+			//è·å–å‚æ•°å€¼
 			String svalue = request.getParameter(f.getName());
-			//¿ÕÖµÌø¹ı
+			//ç©ºå€¼è·³è¿‡
 			if (svalue == null)
 				continue;
 			try {
-				//ÉùÃ÷×ª»»ºóµÄÖµ±äÁ¿
+				//å£°æ˜è½¬æ¢åçš„å€¼å˜é‡
 				Object ovalue = cast(svalue, f.getType());
 				f.setAccessible(true);
 				f.set(t, ovalue);
 			} catch (Exception e) {
-				System.err.println("ÇëÇó²ÎÊı½âÎö´íÎó£º²ÎÊıÃû=" + f.getName() + "£¬×Ö¶ÎÀàĞÍ=" + f.getType() + "£¬²ÎÊıÖµ=" + svalue);
+				System.err.println("è¯·æ±‚å‚æ•°è§£æé”™è¯¯ï¼šå‚æ•°å=" + f.getName() + "ï¼Œå­—æ®µç±»å‹=" + f.getType() + "ï¼Œå‚æ•°å€¼=" + svalue);
 			}
 		}
 
@@ -64,10 +64,10 @@ public class BeanUtils {
 	}
 
 	/**
-	 * ½«×Ö·û´®×ª³ÉÖ¸¶¨µÄÀàĞÍ£¬Èç¹û ÊäÈëÖµÎª¿Õ£¬»òÕß×ª»»¹ı³Ì³öÏÖÒì³££¬Ôò·µ»ØÄ¬ÈÏÖµ
+	 * å°†å­—ç¬¦ä¸²è½¬æˆæŒ‡å®šçš„ç±»å‹ï¼Œå¦‚æœ è¾“å…¥å€¼ä¸ºç©ºï¼Œæˆ–è€…è½¬æ¢è¿‡ç¨‹å‡ºç°å¼‚å¸¸ï¼Œåˆ™è¿”å›é»˜è®¤å€¼
 	 * @param svalue
 	 * @param cls
-	 * @param defaultValue Ä¬ÈÏÖµ
+	 * @param defaultValue é»˜è®¤å€¼
 	 * @return
 	 */
 	public static <T> T cast(String svalue, Class<T> cls, T defaultValue) {
@@ -86,7 +86,7 @@ public class BeanUtils {
 
 	@SuppressWarnings("unchecked")
 	/**
-	 * ½«±äÁ¿Öµ×ª³ÉÖ¸¶¨µÄÀàĞÍ
+	 * å°†å˜é‡å€¼è½¬æˆæŒ‡å®šçš„ç±»å‹
 	 * @param svalue
 	 * @param cls
 	 * @return
@@ -125,9 +125,9 @@ public class BeanUtils {
 			case "java.lang.Character":
 				String s = "" + value;
 				return (T) Character.valueOf(s.length() == 0 ? null : s.charAt(0));
-			case "java.sql.Date": // ×¢Òâ£º½ÓÊÕÈÕÆÚÀàĞÍÓĞ¸ñÊ½µÄÎÊÌâ
+			case "java.sql.Date": // æ³¨æ„ï¼šæ¥æ”¶æ—¥æœŸç±»å‹æœ‰æ ¼å¼çš„é—®é¢˜
 				return (T) java.sql.Date.valueOf("" + value);
-			case "java.sql.Timestamp": // ×¢Òâ£º½ÓÊÕÈÕÆÚÀàĞÍÓĞ¸ñÊ½µÄÎÊÌâ
+			case "java.sql.Timestamp": // æ³¨æ„ï¼šæ¥æ”¶æ—¥æœŸç±»å‹æœ‰æ ¼å¼çš„é—®é¢˜
 				return (T) java.sql.Timestamp.valueOf("" + value);
 			default:
 				return (T) value;
@@ -162,7 +162,7 @@ public class BeanUtils {
 	}
 
 	/**
-	 * ¸ù¾İ·½·¨Ãû·µ»ØÆ¥ÅäµÄ·½·¨¶ÔÏó
+	 * æ ¹æ®æ–¹æ³•åè¿”å›åŒ¹é…çš„æ–¹æ³•å¯¹è±¡
 	 * @param cls
 	 * @param methodName
 	 * @return
@@ -180,7 +180,7 @@ public class BeanUtils {
 	}
 
 	/**
-	 * ·µ»ØµÚÒ»¸ö²»Îª¿ÕµÄÖµ
+	 * è¿”å›ç¬¬ä¸€ä¸ªä¸ä¸ºç©ºçš„å€¼
 	 * @param values
 	 * @return
 	 */
@@ -194,52 +194,52 @@ public class BeanUtils {
 	}
 
 	/**
-	 * ´Ó¶ÔÏóÖĞ»ñÈ¡Ò»¸ö×Ö¶ÎÖµ
-	 * @param bean		¶ÔÏó
-	 * @param fieldName	×Ö¶ÎÃû
-	 * @return			×Ö¶ÎÖµ
+	 * ä»å¯¹è±¡ä¸­è·å–ä¸€ä¸ªå­—æ®µå€¼
+	 * @param bean		å¯¹è±¡
+	 * @param fieldName	å­—æ®µå
+	 * @return			å­—æ®µå€¼
 	 */
 	public static Object getValue(Object bean, String fieldName) {
 		Class<?> cls = bean.getClass();
 		try {
-			// »ñÈ¡×Ö¶Î
+			// è·å–å­—æ®µ
 			Field field = cls.getDeclaredField(fieldName);
-			// ÉèÖÃ×Ö¶Î¿ÉÒÔÖ±½Ó·ÃÎÊ
+			// è®¾ç½®å­—æ®µå¯ä»¥ç›´æ¥è®¿é—®
 			field.setAccessible(true);
-			// ·µ»Ø×Ö¶ÎÖµ
+			// è¿”å›å­—æ®µå€¼
 			return field.get(bean);
 		} catch (NoSuchFieldException | SecurityException e) {
-			System.out.printf("%sÃ»ÓĞÕâ¸ö×Ö¶Î£º%s", cls.getName(), fieldName);
+			System.out.printf("%sæ²¡æœ‰è¿™ä¸ªå­—æ®µï¼š%s", cls.getName(), fieldName);
 		} catch (IllegalArgumentException | IllegalAccessException e) {
-			System.out.printf("%sÎŞ·¨»ñÈ¡¸Ã×Ö¶ÎÖµ£º%s", cls.getName(), fieldName);
+			System.out.printf("%sæ— æ³•è·å–è¯¥å­—æ®µå€¼ï¼š%s", cls.getName(), fieldName);
 		}
 		return null;
 	}
 
 	/**
-	 * ´Ó¶ÔÏóÖĞ»ñÈ¡Ò»¸ö×Ö¶ÎÖµ
-	 * @param bean		¶ÔÏó
-	 * @param fieldName	×Ö¶ÎÃû
-	 * @return			×Ö¶ÎÖµ
+	 * ä»å¯¹è±¡ä¸­è·å–ä¸€ä¸ªå­—æ®µå€¼
+	 * @param bean		å¯¹è±¡
+	 * @param fieldName	å­—æ®µå
+	 * @return			å­—æ®µå€¼
 	 */
 	public static void setValue(Object bean, String fieldName, Object value) {
 		Class<?> cls = bean.getClass();
 		try {
-			// »ñÈ¡×Ö¶Î
+			// è·å–å­—æ®µ
 			Field field = cls.getDeclaredField(fieldName);
-			// ÉèÖÃ×Ö¶Î¿ÉÒÔÖ±½Ó·ÃÎÊ
+			// è®¾ç½®å­—æ®µå¯ä»¥ç›´æ¥è®¿é—®
 			field.setAccessible(true);
-			// ·µ»Ø×Ö¶ÎÖµ
+			// è¿”å›å­—æ®µå€¼
 			field.set(bean, value);
 		} catch (NoSuchFieldException | SecurityException e) {
-			System.out.printf("%sÃ»ÓĞÕâ¸ö×Ö¶Î£º%s", cls.getName(), fieldName);
+			System.out.printf("%sæ²¡æœ‰è¿™ä¸ªå­—æ®µï¼š%s", cls.getName(), fieldName);
 		} catch (IllegalArgumentException | IllegalAccessException e) {
-			System.out.printf("%sÎŞ·¨ÉèÖÃ¸Ã×Ö¶ÎÖµ£º%s", cls.getName(), fieldName);
+			System.out.printf("%sæ— æ³•è®¾ç½®è¯¥å­—æ®µå€¼ï¼š%s", cls.getName(), fieldName);
 		}
 	}
 
 	/**
-	 * µü´úÒ»¸ö¶ÔÏó£¬¸Ã¶ÔÏó¿ÉÒÔÊÇ£ºÊı×é¡¢¼¯ºÏ¡¢Map¡¢ÊµÌå¶ÔÏó
+	 * è¿­ä»£ä¸€ä¸ªå¯¹è±¡ï¼Œè¯¥å¯¹è±¡å¯ä»¥æ˜¯ï¼šæ•°ç»„ã€é›†åˆã€Mapã€å®ä½“å¯¹è±¡
 	 * @param items
 	 * @param fields
 	 * @return
@@ -264,7 +264,7 @@ public class BeanUtils {
 		final Object[] _fields = fields;
 
 		/**
-		 * ¶Ô items ½øĞĞµü´ú
+		 * å¯¹ items è¿›è¡Œè¿­ä»£
 		 */
 		return new Iterable<Object>() {
 			@Override
