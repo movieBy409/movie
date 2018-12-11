@@ -44,7 +44,7 @@ public class UserServlet extends HttpServlet {
 			} else {
 				System.out.println(66666);
 				// 登录成功
-				resp.getWriter().write("index.jsp");
+				resp.getWriter().write("index.html");
 				return;
 			}
 		}
