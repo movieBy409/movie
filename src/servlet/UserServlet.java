@@ -44,16 +44,9 @@ public class UserServlet extends HttpServlet {
 			} else {
 				System.out.println(66666);
 				// 登录成功
-				resp.getWriter().write("index.html");
+				resp.getWriter().write("movie");
 				return;
 			}
-		}
-		if("register".equals(oper))
-		{
-			/**
-			 * 对用户进行注册操作
-			 */
-			userService.register(account, pwd);
 		}
 		if("register".equals(oper))
 		{
