@@ -55,6 +55,13 @@ public class UserServlet extends HttpServlet {
 			 */
 			userService.register(account, pwd);
 		}
+		if("register".equals(oper))
+		{
+			/**
+			 * 对用户进行注册操作
+			 */
+			userService.register(account, pwd);
+		}
 	}
 
 }
