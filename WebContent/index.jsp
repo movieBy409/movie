@@ -49,9 +49,9 @@
 						<div class="col-md-7 col-lg-8 col-sm-5 col-xs-3">
 							<nav class="main__menu__nav hidden-xs hidden-sm">
 								<ul class="main__menu">
-									<li><a href="index.jsp">Home</a>
-									<li><a href="product-grid.html">List</a></li>
-									<li><a href="product-details.html">Details</a></li>
+									<li><a href="index.jsp">首页</a>
+									<li><a href="product-grid.html">所有电影</a></li>
+									<li><a href="product-details.html">详情信息</a></li>
 								</ul>
 							</nav>
 

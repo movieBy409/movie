@@ -42,7 +42,6 @@ public class UserServlet extends HttpServlet {
 				resp.getWriter().write("error");
 				return;
 			} else {
-				System.out.println(66666);
 				// 登录成功
 				resp.getWriter().write("movie");
 				return;
