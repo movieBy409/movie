@@ -1,4 +1,6 @@
-﻿<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!doctype html>
 <html class="no-js" lang="zxx">
 <head>
 <meta charset="utf-8">
@@ -47,8 +49,8 @@
 							<nav class="main__menu__nav hidden-xs hidden-sm">
 								<ul class="main__menu">
 									<li><a href="index.jsp">首页</a>
-									<li><a href="product-grid.html">所有电影</a></li>
-									<li><a href="product-details.html">详细信息</a></li>
+									<li><a href="product-grid.jsp">所有电影</a></li>
+									<li><a href="product-details.jsp">详细信息</a></li>
 								</ul>
 							</nav>
 
@@ -56,8 +58,8 @@
 								<nav id="mobile_dropdown">
 									<ul>
 										<li><a href="index.jsp">Home</a>
-										<li><a href="product-grid.html">List</a></li>
-										<li><a href="product-details.html">Details</a></li>
+										<li><a href="product-grid.jsp">List</a></li>
+										<li><a href="product-details.jsp">Details</a></li>
 									</ul>
 								</nav>
 							</div>  
@@ -121,7 +123,7 @@
 							</a>
 						</div>
 						<div class="shp__pro__details">
-							<h2><a href="product-details.html">BO&Play Wireless Speaker</a></h2>
+							<h2><a href="product-details.jsp">BO&Play Wireless Speaker</a></h2>
 							<span class="quantity">QTY: 1</span>
 							<span class="shp__price">$105.00</span>
 						</div>
@@ -136,7 +138,7 @@
 							</a>
 						</div>
 						<div class="shp__pro__details">
-							<h2><a href="product-details.html">Brone Candle</a></h2>
+							<h2><a href="product-details.jsp">Brone Candle</a></h2>
 							<span class="quantity">QTY: 1</span>
 							<span class="shp__price">$25.00</span>
 						</div>
@@ -216,7 +218,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/1.jpg" alt="product images">
 												</a>
 											</div>
@@ -230,7 +232,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Largest Water Pot</a></h4>
+												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -243,7 +245,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/2.jpg" alt="product images">
 												</a>
 											</div>
@@ -257,7 +259,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Chair collection</a></h4>
+												<h4><a href="product-details.jsp">Chair collection</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -270,7 +272,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/3.jpg" alt="product images">
 												</a>
 											</div>
@@ -284,7 +286,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">dummy Product name</a></h4>
+												<h4><a href="product-details.jsp">dummy Product name</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -297,7 +299,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/4.jpg" alt="product images">
 												</a>
 											</div>
@@ -311,7 +313,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Largest Water Pot</a></h4>
+												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -324,7 +326,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/5.jpg" alt="product images">
 												</a>
 											</div>
@@ -338,7 +340,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Largest Water Pot</a></h4>
+												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -351,7 +353,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/6.jpg" alt="product images">
 												</a>
 											</div>
@@ -365,7 +367,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Special Wood Basket</a></h4>
+												<h4><a href="product-details.jsp">Special Wood Basket</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -378,7 +380,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/7.jpg" alt="product images">
 												</a>
 											</div>
@@ -392,7 +394,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Largest Water Pot</a></h4>
+												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -405,7 +407,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/8.jpg" alt="product images">
 												</a>
 											</div>
@@ -419,7 +421,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">donec ac tempus nrb</a></h4>
+												<h4><a href="product-details.jsp">donec ac tempus nrb</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -432,7 +434,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/9.jpg" alt="product images">
 												</a>
 											</div>
@@ -446,7 +448,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">nemo enim ipsam</a></h4>
+												<h4><a href="product-details.jsp">nemo enim ipsam</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -459,7 +461,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/10.jpg" alt="product images">
 												</a>
 											</div>
@@ -473,7 +475,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">dummy Product name</a></h4>
+												<h4><a href="product-details.jsp">dummy Product name</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -486,7 +488,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/11.jpg" alt="product images">
 												</a>
 											</div>
@@ -500,7 +502,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Chair collection</a></h4>
+												<h4><a href="product-details.jsp">Chair collection</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -513,7 +515,7 @@
 									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 										<div class="category">
 											<div class="ht__cat__thumb">
-												<a href="product-details.html">
+												<a href="product-details.jsp">
 													<img src="images/product/1.jpg" alt="product images">
 												</a>
 											</div>
@@ -527,7 +529,7 @@
 												</ul>
 											</div>
 											<div class="fr__product__inner">
-												<h4><a href="product-details.html">Largest Water Pot</a></h4>
+												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
 												<ul class="fr__pro__prize">
 													<li class="old__prize">$30.3</li>
 													<li>$25.9</li>
@@ -543,10 +545,10 @@
 											<!-- Start List Product -->
 											<div class="ht__list__product">
 												<div class="ht__list__thumb">
-													<a href="product-details.html"><img src="images/product-2/pro-1/1.jpg" alt="product images"></a>
+													<a href="product-details.jsp"><img src="images/product-2/pro-1/1.jpg" alt="product images"></a>
 												</div>
 												<div class="htc__list__details">
-													<h2><a href="product-details.html">Product Title Here </a></h2>
+													<h2><a href="product-details.jsp">Product Title Here </a></h2>
 													<ul  class="pro__prize">
 														<li class="old__prize">$82.5</li>
 														<li>$75.2</li>
@@ -568,10 +570,10 @@
 											<!-- Start List Product -->
 											<div class="ht__list__product">
 												<div class="ht__list__thumb">
-													<a href="product-details.html"><img src="images/product-2/pro-1/2.jpg" alt="product images"></a>
+													<a href="product-details.jsp"><img src="images/product-2/pro-1/2.jpg" alt="product images"></a>
 												</div>
 												<div class="htc__list__details">
-													<h2><a href="product-details.html">Product Title Here </a></h2>
+													<h2><a href="product-details.jsp">Product Title Here </a></h2>
 													<ul  class="pro__prize">
 														<li class="old__prize">$82.5</li>
 														<li>$75.2</li>
@@ -593,10 +595,10 @@
 											<!-- Start List Product -->
 											<div class="ht__list__product">
 												<div class="ht__list__thumb">
-													<a href="product-details.html"><img src="images/product-2/pro-1/3.jpg" alt="product images"></a>
+													<a href="product-details.jsp"><img src="images/product-2/pro-1/3.jpg" alt="product images"></a>
 												</div>
 												<div class="htc__list__details">
-													<h2><a href="product-details.html">Product Title Here </a></h2>
+													<h2><a href="product-details.jsp">Product Title Here </a></h2>
 													<ul  class="pro__prize">
 														<li class="old__prize">$82.5</li>
 														<li>$75.2</li>
@@ -618,10 +620,10 @@
 											<!-- Start List Product -->
 											<div class="ht__list__product">
 												<div class="ht__list__thumb">
-													<a href="product-details.html"><img src="images/product-2/pro-1/4.jpg" alt="product images"></a>
+													<a href="product-details.jsp"><img src="images/product-2/pro-1/4.jpg" alt="product images"></a>
 												</div>
 												<div class="htc__list__details">
-													<h2><a href="product-details.html">Product Title Here </a></h2>
+													<h2><a href="product-details.jsp">Product Title Here </a></h2>
 													<ul  class="pro__prize">
 														<li class="old__prize">$82.5</li>
 														<li>$75.2</li>
@@ -765,12 +767,12 @@
 								<!-- Start Single Product -->
 								<div class="htc__best__product">
 									<div class="htc__best__pro__thumb">
-										<a href="product-details.html">
+										<a href="product-details.jsp">
 											<img src="images/product-2/sm-smg/1.jpg" alt="small product">
 										</a>
 									</div>
 									<div class="htc__best__product__details">
-										<h2><a href="product-details.html">Product Title Here</a></h2>
+										<h2><a href="product-details.jsp">Product Title Here</a></h2>
 										<ul class="rating">
 											<li><i class="icon-star icons"></i></li>
 											<li><i class="icon-star icons"></i></li>
@@ -788,12 +790,12 @@
 								<!-- Start Single Product -->
 								<div class="htc__best__product">
 									<div class="htc__best__pro__thumb">
-										<a href="product-details.html">
+										<a href="product-details.jsp">
 											<img src="images/product-2/sm-smg/2.jpg" alt="small product">
 										</a>
 									</div>
 									<div class="htc__best__product__details">
-										<h2><a href="product-details.html">Product Title Here</a></h2>
+										<h2><a href="product-details.jsp">Product Title Here</a></h2>
 										<ul class="rating">
 											<li><i class="icon-star icons"></i></li>
 											<li><i class="icon-star icons"></i></li>
@@ -811,12 +813,12 @@
 								<!-- Start Single Product -->
 								<div class="htc__best__product">
 									<div class="htc__best__pro__thumb">
-										<a href="product-details.html">
+										<a href="product-details.jsp">
 											<img src="images/product-2/sm-smg/1.jpg" alt="small product">
 										</a>
 									</div>
 									<div class="htc__best__product__details">
-										<h2><a href="product-details.html">Product Title Here</a></h2>
+										<h2><a href="product-details.jsp">Product Title Here</a></h2>
 										<ul class="rating">
 											<li><i class="icon-star icons"></i></li>
 											<li><i class="icon-star icons"></i></li>
@@ -865,14 +867,14 @@
 	<!-- Start Banner Area -->
 	<div class="htc__banner__area">
 		<ul class="banner__list owl-carousel owl-theme clearfix">
-			<li><a href="product-details.html"><img src="images/banner/bn-3/1.jpg" alt="banner images"></a></li>
-			<li><a href="product-details.html"><img src="images/banner/bn-3/2.jpg" alt="banner images"></a></li>
-			<li><a href="product-details.html"><img src="images/banner/bn-3/3.jpg" alt="banner images"></a></li>
-			<li><a href="product-details.html"><img src="images/banner/bn-3/4.jpg" alt="banner images"></a></li>
-			<li><a href="product-details.html"><img src="images/banner/bn-3/5.jpg" alt="banner images"></a></li>
-			<li><a href="product-details.html"><img src="images/banner/bn-3/6.jpg" alt="banner images"></a></li>
-			<li><a href="product-details.html"><img src="images/banner/bn-3/1.jpg" alt="banner images"></a></li>
-			<li><a href="product-details.html"><img src="images/banner/bn-3/2.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/1.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/2.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/3.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/4.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/5.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/6.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/1.jpg" alt="banner images"></a></li>
+			<li><a href="product-details.jsp"><img src="images/banner/bn-3/2.jpg" alt="banner images"></a></li>
 		</ul>
 	</div>
 	<!-- End Banner Area -->

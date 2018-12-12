@@ -50,8 +50,8 @@
 							<nav class="main__menu__nav hidden-xs hidden-sm">
 								<ul class="main__menu">
 									<li><a href="index.jsp">首页</a>
-									<li><a href="product-grid.html">所有电影</a></li>
-									<li><a href="product-details.html">详情信息</a></li>
+									<li><a href="product-grid.jsp">所有电影</a></li>
+									<li><a href="product-details.jsp">详情信息</a></li>
 								</ul>
 							</nav>
 
@@ -59,8 +59,8 @@
 								<nav id="mobile_dropdown">
 									<ul>
 										<li><a href="index.jsp">Home</a>
-										<li><a href="product-grid.html">List</a></li>
-										<li><a href="product-details.html">Details</a></li>
+										<li><a href="product-grid.jsp">List</a></li>
+										<li><a href="product-details.jsp">Details</a></li>
 									</ul>
 								</nav>
 							</div>  
@@ -124,7 +124,7 @@
 							</a>
 						</div>
 						<div class="shp__pro__details">
-							<h2><a href="product-details.html">BO&Play Wireless Speaker</a></h2>
+							<h2><a href="product-details.jsp">BO&Play Wireless Speaker</a></h2>
 							<span class="quantity">QTY: 1</span>
 							<span class="shp__price">$105.00</span>
 						</div>
@@ -139,7 +139,7 @@
 							</a>
 						</div>
 						<div class="shp__pro__details">
-							<h2><a href="product-details.html">Brone Candle</a></h2>
+							<h2><a href="product-details.jsp">Brone Candle</a></h2>
 							<span class="quantity">QTY: 1</span>
 							<span class="shp__price">$25.00</span>
 						</div>
@@ -235,7 +235,7 @@
 							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 								<div class="category">
 									<div class="ht__cat__thumb">
-										<a href="product-details.html">
+										<a href="product-details.jsp">
 											<img src="${movie.mimage }" alt="product images">
 										</a>
 									</div>
@@ -249,7 +249,7 @@
 										</ul>
 									</div>
 									<div class="fr__product__inner">
-										<h4><a href="product-details.html">${movie.mname }</a></h4>
+										<h4><a href="product-details.jsp">${movie.mname }</a></h4>
 										<ul class="fr__pro__prize">
 											<li class="old__prize">$${movie.price }</li>
 											<li>$${movie.price }</li>
@@ -304,7 +304,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.html">
+								<a href="product-details.jsp">
 									<img src="images/product/9.jpg" alt="product images">
 								</a>
 							</div>
@@ -318,7 +318,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.html">Special Wood Basket</a></h4>
+								<h4><a href="product-details.jsp">Special Wood Basket</a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
@@ -331,7 +331,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.html">
+								<a href="product-details.jsp">
 									<img src="images/product/10.jpg" alt="product images">
 								</a>
 							</div>
@@ -345,7 +345,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.html">voluptatem accusantium</a></h4>
+								<h4><a href="product-details.jsp">voluptatem accusantium</a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
@@ -358,7 +358,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.html">
+								<a href="product-details.jsp">
 									<img src="images/product/11.jpg" alt="product images">
 								</a>
 							</div>
@@ -372,7 +372,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.html">Product Dummy Name</a></h4>
+								<h4><a href="product-details.jsp">Product Dummy Name</a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
@@ -385,7 +385,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.html">
+								<a href="product-details.jsp">
 									<img src="images/product/12.jpg" alt="product images">
 								</a>
 							</div>
@@ -399,7 +399,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.html">Product Title Here </a></h4>
+								<h4><a href="product-details.jsp">Product Title Here </a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
@@ -491,12 +491,12 @@
 				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 					<div class="htc__best__product">
 						<div class="htc__best__pro__thumb">
-							<a href="product-details.html">
+							<a href="product-details.jsp">
 								<img src="images/product-2/sm-img-2/1.jpg" alt="small product">
 							</a>
 						</div>
 						<div class="htc__best__product__details">
-							<h2><a href="product-details.html">dummy Product title</a></h2>
+							<h2><a href="product-details.jsp">dummy Product title</a></h2>
 							<ul class="rating">
 								<li><i class="icon-star icons"></i></li>
 								<li><i class="icon-star icons"></i></li>
@@ -523,12 +523,12 @@
 				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 					<div class="htc__best__product">
 						<div class="htc__best__pro__thumb">
-							<a href="product-details.html">
+							<a href="product-details.jsp">
 								<img src="images/product-2/sm-img-2/2.jpg" alt="small product">
 							</a>
 						</div>
 						<div class="htc__best__product__details">
-							<h2><a href="product-details.html">dummy Product title</a></h2>
+							<h2><a href="product-details.jsp">dummy Product title</a></h2>
 							<ul class="rating">
 								<li><i class="icon-star icons"></i></li>
 								<li><i class="icon-star icons"></i></li>
@@ -555,12 +555,12 @@
 				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 					<div class="htc__best__product">
 						<div class="htc__best__pro__thumb">
-							<a href="product-details.html">
+							<a href="product-details.jsp">
 								<img src="images/product-2/sm-img-2/3.jpg" alt="small product">
 							</a>
 						</div>
 						<div class="htc__best__product__details">
-							<h2><a href="product-details.html">dummy Product title</a></h2>
+							<h2><a href="product-details.jsp">dummy Product title</a></h2>
 							<ul class="rating">
 								<li><i class="icon-star icons"></i></li>
 								<li><i class="icon-star icons"></i></li>
