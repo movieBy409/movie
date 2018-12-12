@@ -43,10 +43,11 @@ public class UserServlet extends HttpServlet {
 				return;
 			} else {
 				// 登录成功
-				resp.getWriter().write("movie");
+				resp.getWriter().write("movie?oper=index");
 				return;
 			}
 		}
+		
 		if("register".equals(oper))
 		{
 			/**

@@ -43,14 +43,14 @@
 					<div class="menumenu__container clearfix">
 						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"> 
 							<div class="logo">
-								 <a href="index.jsp"><img src="images/logo/logo.png" alt="logo images"></a>
+								 <a href="movie?oper=index"><img src="images/logo/logo.png" alt="logo images"></a>
 							</div>
 						</div>
 						<div class="col-md-7 col-lg-8 col-sm-5 col-xs-3">
 							<nav class="main__menu__nav hidden-xs hidden-sm">
 								<ul class="main__menu">
-									<li><a href="index.jsp">首页</a>
-									<li><a href="product-grid.jsp">所有电影</a></li>
+									<li><a href="movie?oper=index">首页</a>
+									<li><a href="movie?oper=all">所有电影</a></li>
 									<li><a href="product-details.jsp">详情信息</a></li>
 								</ul>
 							</nav>
@@ -58,8 +58,8 @@
 							<div class="mobile-menu clearfix visible-xs visible-sm">
 								<nav id="mobile_dropdown">
 									<ul>
-										<li><a href="index.jsp">Home</a>
-										<li><a href="product-grid.jsp">List</a></li>
+										<li><a href="movie?oper=index">Home</a>
+										<li><a href="movie?oper=all">List</a></li>
 										<li><a href="product-details.jsp">Details</a></li>
 									</ul>
 								</nav>

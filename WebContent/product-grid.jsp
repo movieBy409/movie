@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -42,14 +43,14 @@
 					<div class="menumenu__container clearfix">
 						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"> 
 							<div class="logo">
-								 <a href="index.jsp"><img src="images/logo/logo.png" alt="logo images"></a>
+								 <a href="movie?oper=index"><img src="images/logo/logo.png" alt="logo images"></a>
 							</div>
 						</div>
 						<div class="col-md-7 col-lg-8 col-sm-5 col-xs-3">
 							<nav class="main__menu__nav hidden-xs hidden-sm">
 								<ul class="main__menu">
-									<li><a href="index.jsp">首页</a>
-									<li><a href="product-grid.jsp">所有电影</a></li>
+									<li><a href="movie?oper=index">首页</a>
+									<li><a href="movie?oper=all">所有电影</a></li>
 									<li><a href="product-details.jsp">详细信息</a></li>
 								</ul>
 							</nav>
@@ -57,8 +58,8 @@
 							<div class="mobile-menu clearfix visible-xs visible-sm">
 								<nav id="mobile_dropdown">
 									<ul>
-										<li><a href="index.jsp">Home</a>
-										<li><a href="product-grid.jsp">List</a></li>
+										<li><a href="movie?oper=index">Home</a>
+										<li><a href="movie?oper=all">List</a></li>
 										<li><a href="product-details.jsp">Details</a></li>
 									</ul>
 								</nav>
@@ -168,7 +169,7 @@
 					<div class="col-xs-12">
 						<div class="bradcaump__inner">
 							<nav class="bradcaump-inner">
-							  <a class="breadcrumb-item" href="index.jsp">首页</a>
+							  <a class="breadcrumb-item" href="movie?oper=index">首页</a>
 							  <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
 							  <span class="breadcrumb-item active">所有电影</span>
 							</nav>
@@ -214,330 +215,36 @@
 						<div class="row">
 							<div class="shop__grid__view__wrap">
 								<div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/1.jpg" alt="product images">
-												</a>
+									
+									<c:forEach items="${allmovie }" var="movie">
+											<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+												<div class="category">
+													<div class="ht__cat__thumb">
+														<a href="movie?oper=movieinfo&mid=${movie.mid }">
+															<img src="${movie.mimage}" alt="product images">
+														</a>
+													</div>
+													<div class="fr__hover__info">
+														<ul class="product__action">
+															<li><a href="#"><i class="icon-heart icons"></i></a></li>
+		
+															<li><a href="#"><i class="icon-handbag icons"></i></a></li>
+		
+															<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
+														</ul>
+													</div>
+													<div class="fr__product__inner">
+														<h4><a href="product-details.jsp">${movie.mname }</a></h4>
+														<ul class="fr__pro__prize">
+															<li class="old__prize">$${movie.price}</li>
+															<li>$${movie.price }</li>
+														</ul>
+													</div>
+												</div>
 											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
+									
+									</c:forEach>
 
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/2.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Chair collection</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/3.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">dummy Product name</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/4.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/5.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/6.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Special Wood Basket</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/7.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/8.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">donec ac tempus nrb</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/9.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">nemo enim ipsam</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/10.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">dummy Product name</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/11.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Chair collection</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-										<div class="category">
-											<div class="ht__cat__thumb">
-												<a href="product-details.jsp">
-													<img src="images/product/1.jpg" alt="product images">
-												</a>
-											</div>
-											<div class="fr__hover__info">
-												<ul class="product__action">
-													<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-													<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-												</ul>
-											</div>
-											<div class="fr__product__inner">
-												<h4><a href="product-details.jsp">Largest Water Pot</a></h4>
-												<ul class="fr__pro__prize">
-													<li class="old__prize">$30.3</li>
-													<li>$25.9</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<!-- End Single Product -->
 								</div>
 								<div role="tabpanel" id="list-view" class="single-grid-view tab-pane fade clearfix">
 									<div class="col-xs-12">
