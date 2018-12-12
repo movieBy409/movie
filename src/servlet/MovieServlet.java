@@ -31,7 +31,7 @@ public class MovieServlet extends HttpServlet {
 		if (oper == null || "".equals(oper)) {
 			// 用户 不输入oper
 		}
-         //主页显示排名前8的电影
+		// 主页显示排名前8的电影
 		if ("index".equals(oper)) {
 
 			List<Movie> movieList = movieService.topMovie();
@@ -39,17 +39,23 @@ public class MovieServlet extends HttpServlet {
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 			return;
 		} else if ("all".equals(oper)) {
-			//展示所有电影
+			// 展示所有电影
 			List<Movie> allmovie = movieService.allMovie();
 			req.setAttribute("allmovie", allmovie);
 			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
 			return;
-		}else if("movieinfo".equals(oper)) {
-			//展示电影详细信息
+		} else if ("movieinfo".equals(oper)) {
+			// 展示电影详细信息
 			String mid = req.getParameter("mid");
 			Movie movie = movieService.movie(mid);
 			req.setAttribute("movie", movie);
 			req.getRequestDispatcher("product-details.jsp").forward(req, resp);
+		} else if ("findmovie".equals(oper)) {
+			//通过电影名字搜索
+            String mname = req.getParameter("mname");
+            List<Movie> findmovie = movieService.findMovie(mname);
+            req.setAttribute("allmovie", findmovie);
+			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
 		}
 
 	}

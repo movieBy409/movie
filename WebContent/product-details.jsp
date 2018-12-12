@@ -90,14 +90,15 @@
 	<div class="body__overlay"></div>
 	<!-- Start Offset Wrapper -->
 	<div class="offset__wrapper">
-		<!-- Start Search Popap -->
+	
+		<!-- 电影名字搜索 -->
 		<div class="search__area">
 			<div class="container" >
 				<div class="row" >
 					<div class="col-md-12" >
 						<div class="search__inner">
-							<form action="#" method="get">
-								<input placeholder="Search here... " type="text">
+							<form action="movie?oper=findmovie" method="post">
+								<input placeholder="Search here... " name="mname"  type="text">
 								<button type="submit"></button>
 							</form>
 							<div class="search__close__btn">
@@ -181,8 +182,11 @@
 		</div>
 	</div>
 	<!-- End Bradcaump area -->
+	
+	
 	<!-- Start Product Details Area -->
 	<section class="htc__product__details bg__white ptb--100">
+	
 		<!-- Start Product Details Top -->
 		<div class="htc__product__details__top">
 			<div class="container">

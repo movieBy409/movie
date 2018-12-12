@@ -97,8 +97,8 @@
 				<div class="row" >
 					<div class="col-md-12" >
 						<div class="search__inner">
-							<form action="#" method="get">
-								<input placeholder="Search here... " type="text">
+							<form action="movie?oper=findmovie" method="post">
+								<input placeholder="Search here... " name="mname" type="text">
 								<button type="submit"></button>
 							</form>
 							<div class="search__close__btn">
@@ -174,7 +174,7 @@
 									<h2>iron Man</h2>
 									<h1>NICE MOVIE</h1>
 									<div class="cr__btn">
-										<a href="#">Buy Now</a>
+										<a href="movie?oper=movieinfo&mid=16">Buy Now</a>
 									</div>
 								</div>
 							</div>
@@ -198,7 +198,7 @@
 									<h2>Extinguish</h2>
 									<h1>NICE Movie</h1>
 									<div class="cr__btn">
-										<a href="#">Buy Now</a>
+										<a href="movie?oper=movieinfo&mid=16">Buy Now</a>
 									</div>
 								</div>
 							</div>
@@ -235,7 +235,7 @@
 							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 								<div class="category">
 									<div class="ht__cat__thumb">
-										<a href="product-details.jsp">
+										<a href="movie?oper=movieinfo&mid=${movie.mid}">
 											<img src="${movie.mimage }" alt="product images">
 										</a>
 									</div>
@@ -287,7 +287,10 @@
 		</div>
 	</section>
 	<!-- End Prize Good Area -->
-	<!-- Start Product Area -->
+	
+	
+	
+	<!-- Start Product Area  更多电影展示 -->
 	<section class="ftr__product__area ptb--100">
 		<div class="container">
 			<div class="row">
@@ -413,6 +416,9 @@
 		</div>
 	</section>
 	<!-- End Product Area -->
+	
+	
+	
 	<!-- Start Testimonial Area -->
 	<section class="htc__testimonial__area bg__cat--4">
 		<div class="container">
@@ -475,118 +481,7 @@
 		</div>
 	</section>
 	<!-- End Testimonial Area -->
-	<!-- Start Top Rated Area -->
-	<section class="top__rated__area bg__white pt--100 pb--110">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="section__title--2 text-center">
-						<h2 class="title__line">Top Rated</h2>
-						<p>But I must explain to you</p>
-					</div>
-				</div>
-			</div>
-			<div class="row mt--20">
-				<!-- Start Single Product -->
-				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-					<div class="htc__best__product">
-						<div class="htc__best__pro__thumb">
-							<a href="product-details.jsp">
-								<img src="images/product-2/sm-img-2/1.jpg" alt="small product">
-							</a>
-						</div>
-						<div class="htc__best__product__details">
-							<h2><a href="product-details.jsp">dummy Product title</a></h2>
-							<ul class="rating">
-								<li><i class="icon-star icons"></i></li>
-								<li><i class="icon-star icons"></i></li>
-								<li><i class="icon-star icons"></i></li>
-								<li class="old"><i class="icon-star icons"></i></li>
-								<li class="old"><i class="icon-star icons"></i></li>
-							</ul>
-							<ul  class="top__pro__prize">
-								<li class="old__prize">$82.5</li>
-								<li>$75.2</li>
-							</ul>
-							<div class="best__product__action">
-								<ul class="product__action--dft">
-									<li><a href="#"><i class="icon-heart icons"></i></a></li>
-									<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-									<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Single Product -->
-				<!-- Start Single Product -->
-				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-					<div class="htc__best__product">
-						<div class="htc__best__pro__thumb">
-							<a href="product-details.jsp">
-								<img src="images/product-2/sm-img-2/2.jpg" alt="small product">
-							</a>
-						</div>
-						<div class="htc__best__product__details">
-							<h2><a href="product-details.jsp">dummy Product title</a></h2>
-							<ul class="rating">
-								<li><i class="icon-star icons"></i></li>
-								<li><i class="icon-star icons"></i></li>
-								<li><i class="icon-star icons"></i></li>
-								<li class="old"><i class="icon-star icons"></i></li>
-								<li class="old"><i class="icon-star icons"></i></li>
-							</ul>
-							<ul  class="top__pro__prize">
-								<li class="old__prize">$82.5</li>
-								<li>$75.2</li>
-							</ul>
-							<div class="best__product__action">
-								<ul class="product__action--dft">
-									<li><a href="#"><i class="icon-heart icons"></i></a></li>
-									<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-									<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Single Product -->
-				<!-- Start Single Product -->
-				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-					<div class="htc__best__product">
-						<div class="htc__best__pro__thumb">
-							<a href="product-details.jsp">
-								<img src="images/product-2/sm-img-2/3.jpg" alt="small product">
-							</a>
-						</div>
-						<div class="htc__best__product__details">
-							<h2><a href="product-details.jsp">dummy Product title</a></h2>
-							<ul class="rating">
-								<li><i class="icon-star icons"></i></li>
-								<li><i class="icon-star icons"></i></li>
-								<li><i class="icon-star icons"></i></li>
-								<li class="old"><i class="icon-star icons"></i></li>
-								<li class="old"><i class="icon-star icons"></i></li>
-							</ul>
-							<ul  class="top__pro__prize">
-								<li class="old__prize">$82.5</li>
-								<li>$75.2</li>
-							</ul>
-							<div class="best__product__action">
-								<ul class="product__action--dft">
-									<li><a href="#"><i class="icon-heart icons"></i></a></li>
-									<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-									<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Single Product -->
-			</div>
-		</div>
-	</section>
-	<!-- End Top Rated Area -->
+	
 	<!-- Start Brand Area -->
 	<div class="htc__brand__area bg__cat--4">
 		<div class="container">
@@ -616,7 +511,7 @@
 				<div class="col-xs-12">
 					<div class="section__title--2 text-center">
 						<h2 class="title__line">Our Blog</h2>
-						<p>But I must explain to you how all this mistaken idea</p>
+						<p>We believe that our cinema mall will do better for you</p>
 					</div>
 				</div>
 			</div>
@@ -627,7 +522,7 @@
 						<div class="blog">
 							<div class="blog__thumb">
 								<a href="#">
-									<img src="images/blog/blog-img/1.jpg" alt="blog images">
+									<img src="images/blog/blog-img/a1.png" alt="blog images">
 								</a>
 							</div>
 							<div class="blog__details">
@@ -648,7 +543,7 @@
 						<div class="blog">
 							<div class="blog__thumb">
 								<a href="#">
-									<img src="images/blog/blog-img/2.jpg" alt="blog images">
+									<img src="images/blog/blog-img/a2.png" alt="blog images">
 								</a>
 							</div>
 							<div class="blog__details">
@@ -669,7 +564,7 @@
 						<div class="blog">
 							<div class="blog__thumb">
 								<a href="#">
-									<img src="images/blog/blog-img/3.jpg" alt="blog images">
+									<img src="images/blog/blog-img/a3.png" alt="blog images">
 								</a>
 							</div>
 							<div class="blog__details">
