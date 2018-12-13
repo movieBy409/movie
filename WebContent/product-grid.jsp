@@ -205,12 +205,15 @@
 					<!-- Start Product View 简单展示电影 -->
 						<div class="row">
 							<div class="shop__grid__view__wrap">
+							
+							
 								<div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">
 										
 									<!-- 展示所有电影 -->
 									
 									
 	<c:forEach items="${allmovie }" var="movie">
+	
 			<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 				<div class="category">
 					<div class="ht__cat__thumb">
@@ -276,6 +279,8 @@
 								</div>
 							</div>
 						</div>
+						
+						
 						<!-- End List Product -->
 						
 						<!-- End Product View -->
@@ -341,72 +346,8 @@
 								<li><a href="movie?oper=movietype&type=犯罪">犯罪</a></li>
 							</ul>
 						</div>
-						<!-- End Category Area -->
 						
-						<!-- Start Pro Color  
-						<div class="ht__pro__color">
-							<h4 class="title__line--4">color</h4>
-							<ul class="ht__color__list">
-								<li class="grey"><a href="#">grey</a></li>
-								<li class="lamon"><a href="#">lamon</a></li>
-								<li class="white"><a href="#">white</a></li>
-								<li class="red"><a href="#">red</a></li>
-								<li class="black"><a href="#">black</a></li>
-								<li class="pink"><a href="#">pink</a></li>
-							</ul>
-						</div>
-						 -->
-						<!-- End Pro Color -->
-						
-						
-						<!-- Start Pro Size 
-						<div class="ht__pro__size">
-							<h4 class="title__line--4">Size</h4>
-							<ul class="ht__size__list">
-								<li><a href="#">xs</a></li>
-								<li><a href="#">s</a></li>
-								<li><a href="#">m</a></li>
-								<li><a href="#">reld</a></li>
-								<li><a href="#">xl</a></li>
-							</ul>
-						</div>-->
-						<!-- End Pro Size    -->
-						<!-- Start Tag Area   <div class="htc__tag">
-							<h4 class="title__line--4">tags</h4>
-							<ul class="ht__tag__list">
-								<li><a href="#">Clothing</a></li>
-								<li><a href="#">bag</a></li>
-								<li><a href="#">Shoes</a></li>
-								<li><a href="#">Jewelry</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Aceessories</a></li>
-								<li><a href="#">Store</a></li>
-								<li><a href="#">Watch</a></li>
-								<li><a href="#">Other</a></li>
-							</ul>
-						</div>-->
-						
-						<!-- End Tag Area -->
-						
-						
-						<!-- Start Compare Area 
-    						<div class="htc__compare__area">
-							<h4 class="title__line--4">compare</h4>
-							<ul class="htc__compare__list">
-								<li><a href="#">White men’s polo<i class="icon-trash icons"></i></a></li>
-								<li><a href="#">T-shirt for style girl...<i class="icon-trash icons"></i></a></li>
-								<li><a href="#">Basic dress for women...<i class="icon-trash icons"></i></a></li>
-							</ul>
-							<ul class="ht__com__btn">
-								<li><a href="#">clear all</a></li>
-								<li class="compare"><a href="#">Compare</a></li>
-							</ul>
-						</div>
-						-->
-						<!-- End Compare Area -->
-						
-						
-						<!-- 显示畅销的电影    占时写死-->
+				
 						<!-- Start Best Sell Area  -->
 						<div class="htc__recent__product">
 							<h2 class="title__line--4">最近畅销热门电影</h2>
@@ -656,6 +597,64 @@
 
 <script type="text/javascript">
 
+/* 
+*
+*
+*
+
+<div class="ht__cat__thumb">
+	<a href="movie?oper=movieinfo&mid=${movie.mid}">
+		<img src="${movie.mimage}" alt="product images">
+	</a>
+</div>
+<div class="fr__hover__info">
+	<ul class="product__action">
+		<li><a href="#"><i class="icon-heart icons"></i></a></li>
+
+		<li><a href="#"><i class="icon-handbag icons"></i></a></li>
+
+		<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
+	</ul>
+</div>
+<div class="fr__product__inner">
+	<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">${movie.mname }</a></h4>
+	<ul class="fr__pro__prize">
+		<li>$${movie.price }</li>
+	</ul>
+</div>
+</div>
+</div>
+*
+*/
+
+ function createEle(text,uname,uimage) {
+	var point = $("<div class=\"category\">" +
+		"<div class=\"user-head\">" +
+		"<img src="+uimage+" />" +
+		"</div>" +
+		"</div>" +
+		"</div>" +
+		"</div>" +
+		"</div>" +
+		"</div>" +
+		"<div class=\"user-name\">uname</div>" +
+		"<div class=\"user-reply\">回复</div>"+
+		"<div class=\"user-msg\">" + text + "</div>" +
+		"<div class=\"user-time\">" + getData() + "</div>" +
+		"</li>");
+	return point;
+} 
+
+
+
+
+
+
+
+
+
+
+
   function search() {
 
 	  var amount=$("#amount").val();
@@ -670,7 +669,6 @@
           data:"amount="+amount,
           cache: false, //不缓存此页面
           success: function (data) {
-              	 
           }
       });
 }
