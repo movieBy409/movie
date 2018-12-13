@@ -42,8 +42,12 @@ public class UserServlet extends HttpServlet {
 				resp.getWriter().write("error");
 				return;
 			} else {
-				// 登录成功
-				resp.getWriter().write("movie?oper=index");
+				
+				// 登录成功  将user 写进去
+				
+				user.setPwd("");
+				req.getSession().setAttribute("user", user);
+				resp.getWriter().write("movie?oper=index&account="+account);
 				return;
 			}
 		}

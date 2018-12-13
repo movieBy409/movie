@@ -37,6 +37,13 @@
 	<!-- Start Header Style -->
 	<header id="htc__header" class="htc__header__area header--one">
 		<!-- Start Mainmenu Area -->
+		
+		<!-- session 里面得到的  用户信息  -->
+		<%-- <input type="hidden" id="uid" value="${sessionScope.user.uid }">
+		<input type="hidden" id="uname" value="${sessionScope.user.uname }">
+		<input type="hidden" id="uimage" value="${sessionScope.user.uimage }"> --%>
+		
+		
 		<div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
 			<div class="container">
 				<div class="row">
@@ -58,6 +65,7 @@
 							<div class="mobile-menu clearfix visible-xs visible-sm">
 								<nav id="mobile_dropdown">
 									<ul>
+									
 										<li><a href="movie?oper=index">Home</a>
 										<li><a href="movie?oper=all">List</a></li>
 										<li><a href="movie?oper=movieinfo&mid=${movie.mid}">Details</a></li>
@@ -230,6 +238,8 @@
 				<div class="row">
 					<div class="product__list clearfix mt--30">
 					
+					
+					
 						<!-- 展示TOP8的电影信息 -->
 						<c:forEach items="${movieList}" var="movie">
 							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
@@ -257,7 +267,6 @@
 								</div>
 							</div>
 						</c:forEach>
-
 					</div>
 				</div>
 			</div>

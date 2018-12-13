@@ -68,23 +68,60 @@ $(function() {
 			//拿到用户输入的内容
 			var text = $(".comment-text").val();
 			//根据内容创建节点
-			var point = createEle(text);
-			//插入微博
-			$(".message>ul").prepend(point);
-			//清空输入框
-			$(".comment-text").val("");
-			//将输入的字数回到初始状态
-			$(".comment-operation>span").html(1000);
+			
+			var uname=$("#uname").val();
+			var uimage=$("#uimage").val();
+			var uid=$("#uid").val();
+			var mid=$("#mid").val();
+			console.log(uname  +"  "+ uimage+ " "+ uid+"  "+mid);
+			
+			if(uid==''||uid==null ){
+				alert('请登录再进行留言');
+				return;
+			}
+			var flag='';
+			//ajax 调用     开始留言功能  返回一个信息    留言成功 开始展示已下功能     
+				var ajax=null;
+				 if(window.XMLHttpRequest){
+					 ajax=new XMLHttpRequest();
+				 }else if(window.ActiveXObject){
+					 ajax=new ActiveXObject("Msxml2.XMLHTTP");
+				 }
+				 //2,复写
+				 ajax.onreadystatechange=function(){
+					 if(ajax.readyState==4){
+						 flag=ajax.responseText;
+						 
+						 if(flag==''||flag=='null'){
+							 alert("系统繁忙,请稍后再试");
+							 return ;
+						 }else{
+							 var point = createEle(text,uname,uimage);
+							 $("#mnumber").html(parseInt($("#mnumber").html()) + 1);
+								//插入微博
+								$(".message>ul").prepend(point);
+								//清空输入框
+								$(".comment-text").val("");
+								//将输入的字数回到初始状态
+								$(".comment-operation>span").html(1000);
+								// 将输入框隐藏
+								$(".comment").css({
+									display : "none"
+								});
+						 }
+					 }
+				 }
+				 ajax.open("post","board",true);// 向 AjaxResult01发出40.请求
+				 ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				 ajax.send("oper=board&"+"uid="+uid+"&msg="+text+"&mid="+mid);
 		});
-
-
 		//创建节点的方法
-		function createEle(text) {
+		function createEle(text,uname,uimage) {
 			var point = $("<li>" +
 				"<div class=\"user-head\">" +
-				"<img src=\"img/三生__.jpg\" />" +
+				"<img src="+uimage+" />" +
 				"</div>" +
-				"<div class=\"user-name\">有酒醉三生</div>" +
+				"<div class=\"user-name\">uname</div>" +
 				"<div class=\"user-reply\">回复</div>"+
 				"<div class=\"user-msg\">" + text + "</div>" +
 				"<div class=\"user-time\">" + getData() + "</div>" +
