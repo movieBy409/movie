@@ -208,33 +208,39 @@
 								<div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">
 										
 									<!-- 展示所有电影 -->
-									<c:forEach items="${allmovie }" var="movie">
-											<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-												<div class="category">
-													<div class="ht__cat__thumb">
-														<a href="movie?oper=movieinfo&mid=${movie.mid}">
-															<img src="${movie.mimage}" alt="product images">
-														</a>
-													</div>
-													<div class="fr__hover__info">
-														<ul class="product__action">
-															<li><a href="#"><i class="icon-heart icons"></i></a></li>
-		
-															<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-		
-															<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-														</ul>
-													</div>
-													<div class="fr__product__inner">
-														<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">${movie.mname }</a></h4>
-														<ul class="fr__pro__prize">
-															<li>$${movie.price }</li>
-														</ul>
-													</div>
-												</div>
-											</div>
 									
-									</c:forEach>
+									
+	<c:forEach items="${allmovie }" var="movie">
+			<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+				<div class="category">
+					<div class="ht__cat__thumb">
+						<a href="movie?oper=movieinfo&mid=${movie.mid}">
+							<img src="${movie.mimage}" alt="product images">
+						</a>
+					</div>
+					<div class="fr__hover__info">
+						<ul class="product__action">
+							<li><a href="#"><i class="icon-heart icons"></i></a></li>
+
+							<li><a href="#"><i class="icon-handbag icons"></i></a></li>
+
+							<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
+						</ul>
+					</div>
+					<div class="fr__product__inner">
+						<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">${movie.mname }</a></h4>
+						<ul class="fr__pro__prize">
+							<li>$${movie.price }</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	
+	</c:forEach>
+	
+									
+									
+									
 								</div>
 								
 								<!-- Start List Product 竖直展示电影-->

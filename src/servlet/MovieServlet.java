@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.MessageAndUser;
 import bean.Movie;
 import service.MovieService;
 import service.serviceImpl.MovieServiceImpl;
@@ -33,7 +34,9 @@ public class MovieServlet extends HttpServlet {
 		}
 		// 主页显示排名前8的电影
 		if ("index".equals(oper)) {
-
+			
+            String account=req.getParameter("account");
+            
 			List<Movie> movieList = movieService.topMovie();
 			req.setAttribute("movieList", movieList);
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
@@ -48,7 +51,18 @@ public class MovieServlet extends HttpServlet {
 			// 展示电影详细信息
 			String mid = req.getParameter("mid");
 			Movie movie = movieService.movie(mid);
+			List<MessageAndUser>board= movieService.board(mid);
+			req.setAttribute("board", board);
+			if(board==null)
+			{
+				req.setAttribute("number", 0);
+			}
+			else{
+				req.setAttribute("number", board.size());
+			}
+			
 			req.setAttribute("movie", movie);
+			
 			req.getRequestDispatcher("product-details.jsp").forward(req, resp);
 		} else if ("findmovie".equals(oper)) {
 			// 通过电影名字搜索

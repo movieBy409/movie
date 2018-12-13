@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html class="no-js" lang="zxx">
 <head>
 <meta charset="utf-8">
@@ -270,13 +271,18 @@
 		<!-- End Product Details Top -->
 	</section>
 	<!-- End Product Details Area -->
+	
+	    <input type="hidden" id="uid" value="${sessionScope.user.uid }">
+		<input type="hidden" id="uname" value="${sessionScope.user.uname }">
+		<input type="hidden" id="uimage" value="${sessionScope.user.uimage }">
+		<input type="hidden" id="mid" value="${movie.mid}">
+		
+		
+		<!-- 用户留言功能 -->
 	<div class="message-board">
-					<h2>留言&nbsp;·&nbsp;<span>7</span><span class="msg-write">我要留言</span></h2>
-					
+					<h2>留言&nbsp;·&nbsp;<span id="mnumber">${number }</span><span class="msg-write">我要留言</span></h2>
 					<div class="comment">
-					
-						<textarea class="comment-text" placeholder="来吐槽一下吧" maxlength="1000"></textarea>
-						
+						<textarea class="comment-text" placeholder="想对作者说点什么" maxlength="1000"></textarea>
 						<div class="comment-operation">
 							你还能输入<span>1000</span>个字符
 							<input type="button" value="发表评论" class="send" disabled />
@@ -285,7 +291,20 @@
 					
 					 <div class="message">
 						<ul>
-							
+					       <c:forEach items="${board}" var="t">
+					       <li>
+					       <!-- 添加 此用户信息 -->
+								<div class="user-head">
+									<img src="${t.user.uimage }" />
+								</div>
+								<div class="user-name">${t.user.uname }</div>
+								
+								<div class="user-msg">
+								${t.message.msg }
+								</div>
+								<div class="user-time">${t.message.mdate }</div>
+							</li> 
+					       </c:forEach>
 						</ul>
 					</div>
 				</div>

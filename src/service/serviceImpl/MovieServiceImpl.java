@@ -3,7 +3,10 @@ package service.serviceImpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Message;
+import bean.MessageAndUser;
 import bean.Movie;
+import bean.User;
 import dao.DBHelper;
 import service.MovieService;
 
@@ -64,6 +67,29 @@ public class MovieServiceImpl implements MovieService {
 		String sql = "select * from movie where price>=? and price<=? ";
 		List<Movie> movieamount = DBHelper.select(sql, Movie.class, start,end);
 		return movieamount;
+	}
+
+	@Override
+	public List<MessageAndUser> board(String movieid) {
+		/**
+		 *  加载  电影首页 留言板信息
+		 */
+		List<MessageAndUser>board=new ArrayList<MessageAndUser>();
+		List<Message> mList=DBHelper.select("select * from message where movieid=?", Message.class, movieid);
+		if(mList==null || mList.size()==0){
+			return null;
+		}
+		for (Message message : mList) {
+			User user=DBHelper.unique("select * from user where uid=?",User.class ,message.getUid1());
+			if(user ==null){
+				continue;
+			}
+			MessageAndUser mau=new MessageAndUser();
+			mau.setMessage(message);
+			mau.setUser(user);
+			board.add(mau);
+		}
+		return board;
 	}
 
 }
