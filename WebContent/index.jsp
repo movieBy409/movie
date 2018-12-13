@@ -51,7 +51,7 @@
 								<ul class="main__menu">
 									<li><a href="movie?oper=index">首页</a>
 									<li><a href="movie?oper=all">所有电影</a></li>
-									<li><a href="product-details.jsp">详情信息</a></li>
+									<li><a href="movie?oper=movieinfo&mid=${movie.mid}">详情信息</a></li>
 								</ul>
 							</nav>
 
@@ -60,7 +60,7 @@
 									<ul>
 										<li><a href="movie?oper=index">Home</a>
 										<li><a href="movie?oper=all">List</a></li>
-										<li><a href="product-details.jsp">Details</a></li>
+										<li><a href="movie?oper=movieinfo&mid=${movie.mid}">Details</a></li>
 									</ul>
 								</nav>
 							</div>  
@@ -124,7 +124,7 @@
 							</a>
 						</div>
 						<div class="shp__pro__details">
-							<h2><a href="product-details.jsp">BO&Play Wireless Speaker</a></h2>
+							<h2><a href="movie?oper=movieinfo&mid=${movie.mid}">BO&Play Wireless Speaker</a></h2>
 							<span class="quantity">QTY: 1</span>
 							<span class="shp__price">$105.00</span>
 						</div>
@@ -139,7 +139,7 @@
 							</a>
 						</div>
 						<div class="shp__pro__details">
-							<h2><a href="product-details.jsp">Brone Candle</a></h2>
+							<h2><a href="movie?oper=movieinfo&mid=${movie.mid}">Brone Candle</a></h2>
 							<span class="quantity">QTY: 1</span>
 							<span class="shp__price">$25.00</span>
 						</div>
@@ -249,9 +249,8 @@
 										</ul>
 									</div>
 									<div class="fr__product__inner">
-										<h4><a href="product-details.jsp">${movie.mname }</a></h4>
+										<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">${movie.mname}</a></h4>
 										<ul class="fr__pro__prize">
-											<li class="old__prize">$${movie.price }</li>
 											<li>$${movie.price }</li>
 										</ul>
 									</div>
@@ -307,7 +306,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.jsp">
+								<a href="movie?oper=movieinfo&mid=${movie.mid}">
 									<img src="images/product/9.jpg" alt="product images">
 								</a>
 							</div>
@@ -321,7 +320,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.jsp">Special Wood Basket</a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">Special Wood Basket</a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
@@ -334,7 +333,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.jsp">
+								<a href="movie?oper=movieinfo&mid=${movie.mid}">
 									<img src="images/product/10.jpg" alt="product images">
 								</a>
 							</div>
@@ -348,7 +347,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.jsp">voluptatem accusantium</a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">voluptatem accusantium</a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
@@ -361,7 +360,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.jsp">
+								<a href="movie?oper=movieinfo&mid=${movie.mid}">
 									<img src="images/product/11.jpg" alt="product images">
 								</a>
 							</div>
@@ -375,7 +374,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.jsp">Product Dummy Name</a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">Product Dummy Name</a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
@@ -388,7 +387,7 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="product-details.jsp">
+								<a href="movie?oper=movieinfo&mid=${movie.mid}">
 									<img src="images/product/12.jpg" alt="product images">
 								</a>
 							</div>
@@ -402,7 +401,7 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="product-details.jsp">Product Title Here </a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">Product Title Here </a></h4>
 								<ul class="fr__pro__prize">
 									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>

@@ -51,11 +51,13 @@ public class MovieServlet extends HttpServlet {
 			req.setAttribute("movie", movie);
 			req.getRequestDispatcher("product-details.jsp").forward(req, resp);
 		} else if ("findmovie".equals(oper)) {
-			//通过电影名字搜索
-            String mname = req.getParameter("mname");
-            List<Movie> findmovie = movieService.findMovie(mname);
-            req.setAttribute("allmovie", findmovie);
+			// 通过电影名字搜索
+			String mname = req.getParameter("mname");
+			List<Movie> findmovie = movieService.findMovie(mname);
+			req.setAttribute("allmovie", findmovie);
 			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
+		} else if ("movietype".equals(oper)) {
+               //通过电影类型搜素
 		}
 
 	}

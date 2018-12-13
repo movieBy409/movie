@@ -187,6 +187,7 @@
 	<!-- Start Product Details Area -->
 	<section class="htc__product__details bg__white ptb--100">
 	
+	
 		<!-- Start Product Details Top -->
 		<div class="htc__product__details__top">
 			<div class="container">
@@ -197,42 +198,17 @@
 							<div class="product__big__images">
 								<div class="portfolio-full-image tab-content">
 									<div role="tabpanel" class="tab-pane fade in active" id="img-tab-1">
-										<img src="images/product-2/big-img/1.jpg" alt="full-image">
+										<img src="${movie.mimage}" alt="full-image">
 									</div>
-									<div role="tabpanel" class="tab-pane fade" id="img-tab-2">
-										<img src="images/product-2/big-img/2.jpg" alt="full-image">
-									</div>
-									<div role="tabpanel" class="tab-pane fade" id="img-tab-3">
-										<img src="images/product-2/big-img/3.jpg" alt="full-image">
-									</div>
+
 								</div>
 							</div>
 							<!-- End Product Big Images -->
-							<!-- Start Small images -->
-							<ul class="product__small__images" role="tablist">
-								<li role="presentation" class="pot-small-img active">
-									<a href="#img-tab-1" role="tab" data-toggle="tab">
-										<img src="images/product-2/sm-img-3/3.jpg" alt="small-image">
-									</a>
-								</li>
-								<li role="presentation" class="pot-small-img">
-									<a href="#img-tab-2" role="tab" data-toggle="tab">
-										<img src="images/product-2/sm-img-3/1.jpg" alt="small-image">
-									</a>
-								</li>
-								<li role="presentation" class="pot-small-img">
-									<a href="#img-tab-3" role="tab" data-toggle="tab">
-										<img src="images/product-2/sm-img-3/2.jpg" alt="small-image">
-									</a>
-								</li>
-							</ul>
-							<!-- End Small images -->
 						</div>
 					</div>
 					<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
 						<div class="ht__product__dtl">
-							<h2>jean shirt to sassy girl</h2>
-							<h6>Model: <span>MNG001</span></h6>
+							<h2>${movie.mname }</h2>
 							<ul class="rating">
 								<li><i class="icon-star icons"></i></li>
 								<li><i class="icon-star icons"></i></li>
@@ -240,64 +216,37 @@
 								<li class="old"><i class="icon-star icons"></i></li>
 								<li class="old"><i class="icon-star icons"></i></li>
 							</ul>
-							<ul  class="pro__prize">
-								<li class="old__prize">$82.5</li>
-								<li>$75.2</li>
-							</ul>
-							<p class="pro__info">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan</p>
+							
 							<div class="ht__pro__desc">
 								<div class="sin__desc">
-									<p><span>Availability:</span> In Stock</p>
+									<p><span>导演:</span> &nbsp;&nbsp;${movie.director }</p>
 								</div>
-								<div class="sin__desc align--left">
-									<p><span>color:</span></p>
-									<ul class="pro__color">
-										<li class="red"><a href="#">red</a></li>
-										<li class="green"><a href="#">green</a></li>
-										<li class="balck"><a href="#">balck</a></li>
-									</ul>
-									<div class="pro__more__btn">
-										<a href="#">more</a>
+								<div class="sin__desc">
+									<p><span>主演:</span>&nbsp;&nbsp; ${movie.starring}</p>
+								</div>
+								<div class="sin__desc">
+									<p><span>制片国家/地区:</span> &nbsp;&nbsp;${movie.area }</p>
+								</div>
+								<div class="sin__desc">
+									<p><span>片长:</span> &nbsp;&nbsp;${movie.mtime }</p>
+								</div>
+								<div class="sin__desc">
+									<p><span>语言:</span>&nbsp;&nbsp; ${movie.language }</p>
+								</div>
+								<div class="sin__desc">
+									<p><span>类型:</span>&nbsp;&nbsp; ${movie.type }</p>
+								</div>
+								<div class="sin__desc">
+									<p><span>现价/影院价:</span>&nbsp;&nbsp; ${movie.price }</p>
+								</div>
+							   <p class="pro__info"><span>剧情介绍:</span>&nbsp;&nbsp;${movie.introduction }</p>
+							   
+							   <div class="cr__btn">
+										<a href="movie?oper=movieinfo&mid=16">购票</a>
 									</div>
-								</div>
-								<div class="sin__desc align--left">
-									<p><span>size</span></p>
-									<select class="select__size">
-										<option>s</option>
-										<option>l</option>
-										<option>xs</option>
-										<option>xl</option>
-										<option>m</option>
-										<option>s</option>
-									</select>
-								</div>
-								<div class="sin__desc align--left">
-									<p><span>Categories:</span></p>
-									<ul class="pro__cat__list">
-										<li><a href="#">Fashion,</a></li>
-										<li><a href="#">Accessories,</a></li>
-										<li><a href="#">Women,</a></li>
-										<li><a href="#">Men,</a></li>
-										<li><a href="#">Kid,</a></li>
-										<li><a href="#">Mobile,</a></li>
-										<li><a href="#">Computer,</a></li>
-										<li><a href="#">Hair,</a></li>
-										<li><a href="#">Clothing,</a></li>
-									</ul>
-								</div>
-								<div class="sin__desc align--left">
-									<p><span>Product tags:</span></p>
-									<ul class="pro__cat__list">
-										<li><a href="#">Fashion,</a></li>
-										<li><a href="#">Accessories,</a></li>
-										<li><a href="#">Women,</a></li>
-										<li><a href="#">Men,</a></li>
-										<li><a href="#">Kid,</a></li>
-									</ul>
-								</div>
 
 								<div class="sin__desc product__share__link">
-									<p><span>Share this:</span></p>
+									<p><span>分享:</span></p>
 									<ul class="pro__share">
 										<li><a href="#" target="_blank"><i class="icon-social-twitter icons"></i></a></li>
 
@@ -321,15 +270,18 @@
 		<!-- End Product Details Top -->
 	</section>
 	<!-- End Product Details Area -->
-	<!-- Start Product Description -->
+	
+	
+	
+	<!-- Start Product Description   影片详细信息下的介绍-->
 	<section class="htc__produc__decription bg__white">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<!-- Start List And Grid View -->
 					<ul class="pro__details__tab" role="tablist">
-						<li role="presentation" class="description active"><a href="#description" role="tab" data-toggle="tab">description</a></li>
-						<li role="presentation" class="review"><a href="#review" role="tab" data-toggle="tab">review</a></li>
+						<li role="presentation" class="description active"><a href="#description" role="tab" data-toggle="tab">详细描述</a></li>
+						<li role="presentation" class="review"><a href="#review" role="tab" data-toggle="tab">评论</a></li>
 						<li role="presentation" class="shipping"><a href="#shipping" role="tab" data-toggle="tab">shipping</a></li>
 					</ul>
 					<!-- End List And Grid View -->
@@ -380,134 +332,6 @@
 		</div>
 	</section>
 	<!-- End Product Description -->
-	<!-- Start Product Area -->
-	<section class="htc__product__area--2 pb--100 product-details-res">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="section__title--2 text-center">
-						<h2 class="title__line">New Arrivals</h2>
-						<p>But I must explain to you how all this mistaken idea</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="product__wrap clearfix">
-				
-					<!-- Start Single Product -->
-					<div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-						<div class="category">
-							<div class="ht__cat__thumb">
-								<a href="movie?oper=all">
-									<img src="images/product/1.jpg" alt="product images">
-								</a>
-							</div>
-							<div class="fr__hover__info">
-								<ul class="product__action">
-									<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-								</ul>
-							</div>
-							<div class="fr__product__inner">
-								<h4><a href="movie?oper=all">Product Title Here </a></h4>
-								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
-									<li>$25.9</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- End Single Product -->
-					
-					<!-- Start Single Product -->
-					<div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-						<div class="category">
-							<div class="ht__cat__thumb">
-								<a href="movie?oper=all">
-									<img src="images/product/2.jpg" alt="product images">
-								</a>
-							</div>
-							<div class="fr__hover__info">
-								<ul class="product__action">
-									<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-								</ul>
-							</div>
-							<div class="fr__product__inner">
-								<h4><a href="movie?oper=all">Product Title Here </a></h4>
-								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
-									<li>$25.9</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- End Single Product -->
-					<!-- Start Single Product -->
-					<div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-						<div class="category">
-							<div class="ht__cat__thumb">
-								<a href="movie?oper=all">
-									<img src="images/product/3.jpg" alt="product images">
-								</a>
-							</div>
-							<div class="fr__hover__info">
-								<ul class="product__action">
-									<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-								</ul>
-							</div>
-							<div class="fr__product__inner">
-								<h4><a href="movie?oper=all">Product Title Here </a></h4>
-								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
-									<li>$25.9</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- End Single Product -->
-					<!-- Start Single Product -->
-					<div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-						<div class="category">
-							<div class="ht__cat__thumb">
-								<a href="movie?oper=all">
-									<img src="images/product/4.jpg" alt="product images">
-								</a>
-							</div>
-							<div class="fr__hover__info">
-								<ul class="product__action">
-									<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-									<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-								</ul>
-							</div>
-							<div class="fr__product__inner">
-								<h4><a href="movie?oper=all">Product Title Here </a></h4>
-								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
-									<li>$25.9</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- End Single Product -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Product Area -->
 	<!-- Start Banner Area -->
 	<div class="htc__brand__area bg__cat--4">
 		<div class="container">

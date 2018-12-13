@@ -225,9 +225,8 @@
 														</ul>
 													</div>
 													<div class="fr__product__inner">
-														<h4><a href="product-details.jsp">${movie.mname }</a></h4>
+														<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">${movie.mname }</a></h4>
 														<ul class="fr__pro__prize">
-															<li class="old__prize">$${movie.price}</li>
 															<li>$${movie.price }</li>
 														</ul>
 													</div>
@@ -247,9 +246,8 @@
 														<a href="product-details.jsp"> <img src="${movie.mimage}" alt="product images"></a>
 													</div>
 													<div class="htc__list__details">
-														<h2><a href="product-details.jsp">${movie.mname }</a></h2>
+														<h2><a href="movie?oper=movieinfo&mid=${movie.mid}">${movie.mname }</a></h2>
 														<ul  class="pro__prize">
-															<li class="old__prize">$${movie.price}</li>
 															<li>$${movie.price}</li>
 														</ul>
 														<ul class="rating">
@@ -322,15 +320,15 @@
 						<div class="htc__category">
 							<h4 class="title__line--4">电影类型</h4>
 							<ul class="ht__cat__list">
-								<li><a href="#">爱情</a></li>
-								<li><a href="#">喜剧</a></li>
-								<li><a href="#">动作</a></li>
-								<li><a href="#">剧情</a></li>
-								<li><a href="#">科幻</a></li>
-								<li><a href="#">恐怖</a></li>
-								<li><a href="#">动画</a></li>
-								<li><a href="#">惊悚</a></li>
-								<li><a href="#">犯罪</a></li>
+								<li><a href="movie?oper=movietype&type=爱情">爱情</a></li>
+								<li><a href="movie?oper=movietype&type=喜剧">喜剧</a></li>
+								<li><a href="movie?oper=movietype&type=动作">动作</a></li>
+								<li><a href="movie?oper=movietype&type=剧情">剧情</a></li>
+								<li><a href="movie?oper=movietype&type=科幻">科幻</a></li>
+								<li><a href="movie?oper=movietype&type=恐怖">恐怖</a></li>
+								<li><a href="movie?oper=movietype&type=动画">动画</a></li>
+								<li><a href="movie?oper=movietype&type=惊悚">惊悚</a></li>
+								<li><a href="movie?oper=movietype&type=犯罪">犯罪</a></li>
 							</ul>
 						</div>
 						<!-- End Category Area -->
@@ -406,12 +404,12 @@
 								<!-- Start Single Product -->
 								<div class="htc__best__product">
 									<div class="htc__best__pro__thumb">
-										<a href="product-details.jsp">
+										<a href="movie?oper=movieinfo&mid=3">
 											<img src="images/product-2/sm-smg/t1.jpg" alt="small product">
 										</a>
 									</div>
 									<div class="htc__best__product__details">
-										<h2><a href="product-details.jsp">海王</a></h2>
+										<h2><a href="movie?oper=movieinfo&mid=3">海王</a></h2>
 										<ul class="rating">
 											<li><i class="icon-star icons"></i></li>
 											<li><i class="icon-star icons"></i></li>
@@ -420,7 +418,6 @@
 											<li class="old"><i class="icon-star icons"></i></li>
 										</ul>
 										<ul  class="pro__prize">
-											<li class="old__prize">$43</li>
 											<li>$43</li>
 										</ul>
 									</div>
@@ -429,12 +426,12 @@
 								<!-- Start Single Product -->
 								<div class="htc__best__product">
 									<div class="htc__best__pro__thumb">
-										<a href="product-details.jsp">
+										<a href="movie?oper=movieinfo&mid=1">
 											<img src="images/product-2/sm-smg/t2.jpg" alt="small product">
 										</a>
 									</div>
 									<div class="htc__best__product__details">
-										<h2><a href="product-details.jsp">毒液：致命守护者</a></h2>
+										<h2><a href="movie?oper=movieinfo&mid=1">毒液：致命守护者</a></h2>
 										<ul class="rating">
 											<li><i class="icon-star icons"></i></li>
 											<li><i class="icon-star icons"></i></li>
@@ -443,7 +440,6 @@
 											<li class="old"><i class="icon-star icons"></i></li>
 										</ul>
 										<ul  class="pro__prize">
-											<li class="old__prize">$43</li>
 											<li>$43</li>
 										</ul>
 									</div>
@@ -452,12 +448,12 @@
 								<!-- Start Single Product -->
 								<div class="htc__best__product">
 									<div class="htc__best__pro__thumb">
-										<a href="product-details.jsp">
+										<a href="movie?oper=movieinfo&mid=2">
 											<img src="images/product-2/sm-smg/t3.jpg" alt="small product">
 										</a>
 									</div>
 									<div class="htc__best__product__details">
-										<h2><a href="product-details.jsp">狗十三</a></h2>
+										<h2><a href="movie?oper=movieinfo&mid=2">狗十三</a></h2>
 										<ul class="rating">
 											<li><i class="icon-star icons"></i></li>
 											<li><i class="icon-star icons"></i></li>
@@ -466,7 +462,6 @@
 											<li class="old"><i class="icon-star icons"></i></li>
 										</ul>
 										<ul  class="pro__prize">
-											<li class="old__prize">$25</li>
 											<li>$25</li>
 										</ul>
 									</div>

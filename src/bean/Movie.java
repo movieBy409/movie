@@ -10,6 +10,9 @@ public class Movie {
      private String director;
      private String starring;
      private String type;
+	 private String area;
+     private String language;
+     private String mdate;
      public Long getMid() {
 		return mid;
 	}
@@ -82,7 +85,5 @@ public class Movie {
 	public void setMdate(String mdate) {
 		this.mdate = mdate;
 	}
-	private String area;
-     private String language;
-     private String mdate;
+
 }
