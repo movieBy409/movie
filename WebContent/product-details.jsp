@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="css/responsive.css">
 <!-- User style -->
 <link rel="stylesheet" href="css/custom.css">
-
+<link rel="stylesheet" href="css/goods.css" />
 
 <!-- Modernizr JS -->
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
@@ -270,27 +270,50 @@
 		<!-- End Product Details Top -->
 	</section>
 	<!-- End Product Details Area -->
+	<div class="message-board">
+					<h2>留言&nbsp;·&nbsp;<span>7</span><span class="msg-write">我要留言</span></h2>
+					
+					<div class="comment">
+					
+						<textarea class="comment-text" placeholder="来吐槽一下吧" maxlength="1000"></textarea>
+						
+						<div class="comment-operation">
+							你还能输入<span>1000</span>个字符
+							<input type="button" value="发表评论" class="send" disabled />
+						</div>
+					</div>
+					
+					 <div class="message">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
 	
 	
-	
-	<!-- Start Product Description   影片详细信息下的介绍-->
+	<!--  Start Product Description   影片详细信息下的介绍
 	<section class="htc__produc__decription bg__white">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<!-- Start List And Grid View -->
+					Start List And Grid View
 					<ul class="pro__details__tab" role="tablist">
 						<li role="presentation" class="description active"><a href="#description" role="tab" data-toggle="tab">详细描述</a></li>
 						<li role="presentation" class="review"><a href="#review" role="tab" data-toggle="tab">评论</a></li>
 						<li role="presentation" class="shipping"><a href="#shipping" role="tab" data-toggle="tab">shipping</a></li>
 					</ul>
-					<!-- End List And Grid View -->
+					End List And Grid View
 				</div>
 			</div>
+			
+			
+			
+			
+			
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="ht__pro__details__content">
-						<!-- Start Single Content -->
+						Start Single Content
 						<div role="tabpanel" id="description" class="pro__single__content tab-pane fade in active">
 							<div class="pro__tab__content__inner">
 								<p>Formfitting clothing is all about a sweet spot. That elusive place where an item is tight but not clingy, sexy but not cloying, cool but not over the top. Alexandra Alvarez’s label, Alix, hits that mark with its range of comfortable, minimal, and neutral-hued bodysuits.</p>
@@ -301,8 +324,8 @@
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in</p>
 							</div>
 						</div>
-						<!-- End Single Content -->
-						<!-- Start Single Content -->
+						End Single Content
+						Start Single Content
 						<div role="tabpanel" id="review" class="pro__single__content tab-pane fade">
 							<div class="pro__tab__content__inner">
 								<p>Formfitting clothing is all about a sweet spot. That elusive place where an item is tight but not clingy, sexy but not cloying, cool but not over the top. Alexandra Alvarez’s label, Alix, hits that mark with its range of comfortable, minimal, and neutral-hued bodysuits.</p>
@@ -313,8 +336,8 @@
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem</p>
 							</div>
 						</div>
-						<!-- End Single Content -->
-						<!-- Start Single Content -->
+						End Single Content
+						Start Single Content
 						<div role="tabpanel" id="shipping" class="pro__single__content tab-pane fade">
 							<div class="pro__tab__content__inner">
 								<p>Formfitting clothing is all about a sweet spot. That elusive place where an item is tight but not clingy, sexy but not cloying, cool but not over the top. Alexandra Alvarez’s label, Alix, hits that mark with its range of comfortable, minimal, and neutral-hued bodysuits.</p>
@@ -325,12 +348,13 @@
 								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem</p>
 							</div>
 						</div>
-						<!-- End Single Content -->
+						End Single Content
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
+	
 	<!-- End Product Description -->
 	<!-- Start Banner Area -->
 	<div class="htc__brand__area bg__cat--4">
@@ -485,6 +509,6 @@
 <script src="js/waypoints.min.js"></script>
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="js/main.js"></script>
-
+<script src="js/goods.js"></script>
 </body>
 </html>
