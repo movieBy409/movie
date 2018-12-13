@@ -948,64 +948,38 @@
 	<script src="js/main.js"></script>
 
 	<script type="text/javascript">
-		function search() {
 
-/* 
-*
-*
-*
-
-<div class="ht__cat__thumb">
-	<a href="movie?oper=movieinfo&mid=${movie.mid}">
-		<img src="${movie.mimage}" alt="product images">
-	</a>
-</div>
-<div class="fr__hover__info">
-	<ul class="product__action">
-		<li><a href="#"><i class="icon-heart icons"></i></a></li>
-
-		<li><a href="#"><i class="icon-handbag icons"></i></a></li>
-
-		<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-	</ul>
-</div>
-<div class="fr__product__inner">
-	<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">${movie.mname }</a></h4>
-	<ul class="fr__pro__prize">
-		<li>$${movie.price }</li>
-	</ul>
-</div>
-</div>
-</div>
-*
-*/
-
- function createEle(text,uname,uimage) {
-	var point = $("<div class=\"category\">" +
-		"<div class=\"user-head\">" +
-		"<img src="+uimage+" />" +
+     function createEle(text,uname,uimage) {
+	 var point = $("<div class=\"category\">" +
+		"<div class=\"ht__cat__thumb\">" +
+		/* movie?oper=movieinfo&mid=${movie.mid} */
+		"<a href="+    +">" +
+		/* ${movie.mimage} */
+		"<img src="+    +" alt=\"product images\"></a>" +
+		"</div>" +
+		
+		"<div class=\"fr__hover__info\">" +
+		"<ul class=\"product__action\">" +
+		"<li><a href=\"#\"><i class=\"icon-heart icons\"></i></a></li>" +
+		
+		"<li><a href=\"#\"><i class=\"icon-handbag icons\"></i></a></li>" +
+		"<li><a href=\"#\"><i class=\"icon-shuffle icons\"></i></a></li></ul>" +
+		"</div>" +
+		
+		"<div class=\"fr__product__inner\">" +
+		
+		/* movie?oper=movieinfo&mid=${movie.mid} */
+		"<h4><a href="+  + ">${movie.mname }</a></h4>" +
+		"<ul class=\"fr__pro__prize\">" +
+		
+		/* ${movie.price } */
+		"<li>"+ +"</li>" +
+		"</ul>"+
 		"</div>" +
 		"</div>" +
-		"</div>" +
-		"</div>" +
-		"</div>" +
-		"</div>" +
-		"<div class=\"user-name\">uname</div>" +
-		"<div class=\"user-reply\">回复</div>"+
-		"<div class=\"user-msg\">" + text + "</div>" +
-		"<div class=\"user-time\">" + getData() + "</div>" +
-		"</li>");
+		"</div> ");
 	return point;
 } 
-
-
-
-
-
-
-
-
-
 
 
   function search() {
@@ -1021,7 +995,6 @@
           success: function (data) {
           }
       });
-}
 			//window.location.href="movie?oper=movieamount&amount="+amount;
 			$.ajax({
 				type : "POST",
