@@ -7,6 +7,7 @@ $(function() {
 	favorite();
 	user_reply();
 	
+	
 	// 设置商品默认图片
 	function setDefaultPic() {
 		var path = $(".goods-photo-other>ul>li>img").eq(0).attr("src");
