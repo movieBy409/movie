@@ -19,12 +19,19 @@ public class MovieServiceImpl implements MovieService {
 		return movieList;
 	}
 
-	// 所有电影展示
+	// 获得所有所有电影
 	@Override
 	public List<Movie> allMovie() {
 		String sql = "select * from movie";
-		List<Movie> allmovie = DBHelper.select(sql, Movie.class);
+		List<Movie> allList = DBHelper.select(sql, Movie.class);
+		return allList;
+	}
+    //分页电影
+	public List<Movie> pageMovie(int index, int currentCount) {
+		String sql = "select * from movie limit ?,?";
+		List<Movie>  allmovie = DBHelper.select(sql, Movie.class,index,currentCount);
 		return allmovie;
+
 	}
 
 	// 电影详细信息展示
@@ -38,10 +45,10 @@ public class MovieServiceImpl implements MovieService {
 	@Override
 	public List<Movie> findMovie(String mname) {
 		String sql = "select * from movie";
-		List<String> params= new ArrayList<>();
+		List<String> params = new ArrayList<>();
 		if (mname != null && !mname.trim().equals("")) {
 			sql += " where mname like ? ";
-			params.add("%"+mname+"%");
+			params.add("%" + mname + "%");
 		}
 		List<Movie> findmovie = DBHelper.select(sql, Movie.class, params);
 		return findmovie;
@@ -50,10 +57,10 @@ public class MovieServiceImpl implements MovieService {
 	@Override
 	public List<Movie> movieType(String type) {
 		String sql = "select * from movie";
-		List<String> params= new ArrayList<>();
+		List<String> params = new ArrayList<>();
 		if (type != null && !type.trim().equals("")) {
 			sql += " where type like ? ";
-			params.add("%"+type+"%");
+			params.add("%" + type + "%");
 		}
 		List<Movie> movietype = DBHelper.select(sql, Movie.class, params);
 		return movietype;
@@ -62,7 +69,7 @@ public class MovieServiceImpl implements MovieService {
 	@Override
 	public List<Movie> movieAmount(String start, String end) {
 		String sql = "select * from movie where price>=? and price<=? ";
-		List<Movie> movieamount = DBHelper.select(sql, Movie.class, start,end);
+		List<Movie> movieamount = DBHelper.select(sql, Movie.class, start, end);
 		return movieamount;
 	}
 
