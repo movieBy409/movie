@@ -674,7 +674,6 @@
 				data : "mid=" +mid+"uid="+uid
 				cache : false, //不缓存此页面
 				success : function(data) {
-                    
 				}
 			}); */
 		}
