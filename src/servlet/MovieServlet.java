@@ -57,7 +57,23 @@ public class MovieServlet extends HttpServlet {
 			req.setAttribute("allmovie", findmovie);
 			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
 		} else if ("movietype".equals(oper)) {
-               //通过电影类型搜素
+			// 通过电影类型搜素
+			String type = req.getParameter("type");
+			type = new String(type.getBytes("ISO-8859-1"), "utf-8").toString();
+			List<Movie> movietype = movieService.movieType(type);
+			req.setAttribute("allmovie", movietype);
+			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
+		} else if ("movieamount".equals(oper)) {
+			
+			String amount = req.getParameter("amount");
+			if(amount!=null&&!"".equals(amount)) {
+				String start = amount.substring(amount.indexOf("$") + 1, amount.indexOf(" - "));
+				String end = amount.substring(amount.lastIndexOf("$") + 1);
+				List<Movie> movieamount = movieService.movieAmount(start,end);
+				req.setAttribute("allmovie", movieamount);
+			}
+			
+			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
 		}
 
 	}

@@ -272,7 +272,7 @@
 					<div class="fr__prize__inner">
 						<h2>请珍惜你现在身边所爱你之人.</h2>
 						<h3>Please cherish the person you love with you now.</h3>
-						<a class="fr__btn" href="#">Read More</a>
+						<a class="fr__btn" href="movie?oper=movieinfo&mid=17">Read More</a>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
@@ -306,8 +306,8 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="movie?oper=movieinfo&mid=${movie.mid}">
-									<img src="images/product/9.jpg" alt="product images">
+								<a href="movie?oper=movieinfo&mid=10">
+									<img src="images/product/m10.jpg" alt="product images">
 								</a>
 							</div>
 							<div class="fr__hover__info">
@@ -320,9 +320,8 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">Special Wood Basket</a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=10">无敌破坏王2：大闹互联网</a></h4>
 								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
 								</ul>
 							</div>
@@ -333,8 +332,8 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="movie?oper=movieinfo&mid=${movie.mid}">
-									<img src="images/product/10.jpg" alt="product images">
+								<a href="movie?oper=movieinfo&mid=11">
+									<img src="images/product/m11.jpg" alt="product images">
 								</a>
 							</div>
 							<div class="fr__hover__info">
@@ -347,9 +346,8 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">voluptatem accusantium</a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=11">绿毛怪格林奇</a></h4>
 								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
 								</ul>
 							</div>
@@ -360,8 +358,8 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="movie?oper=movieinfo&mid=${movie.mid}">
-									<img src="images/product/11.jpg" alt="product images">
+								<a href="movie?oper=movieinfo&mid=12">
+									<img src="images/product/m12.jpg" alt="product images">
 								</a>
 							</div>
 							<div class="fr__hover__info">
@@ -374,9 +372,8 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">Product Dummy Name</a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=12">天气预爆</a></h4>
 								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
 								</ul>
 							</div>
@@ -387,8 +384,8 @@
 					<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 						<div class="category">
 							<div class="ht__cat__thumb">
-								<a href="movie?oper=movieinfo&mid=${movie.mid}">
-									<img src="images/product/12.jpg" alt="product images">
+								<a href="movie?oper=movieinfo&mid=13">
+									<img src="images/product/m13.jpg" alt="product images">
 								</a>
 							</div>
 							<div class="fr__hover__info">
@@ -401,9 +398,8 @@
 								</ul>
 							</div>
 							<div class="fr__product__inner">
-								<h4><a href="movie?oper=movieinfo&mid=${movie.mid}">Product Title Here </a></h4>
+								<h4><a href="movie?oper=movieinfo&mid=13">蜘蛛侠：平行宇宙 </a></h4>
 								<ul class="fr__pro__prize">
-									<li class="old__prize">$30.3</li>
 									<li>$25.9</li>
 								</ul>
 							</div>

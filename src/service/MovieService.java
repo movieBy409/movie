@@ -6,7 +6,9 @@ import bean.Movie;
 public interface MovieService {
 	List<Movie> topMovie();
 	List<Movie> allMovie();
-	List<Movie> findMovie(String mname);
+	List<Movie> movieType(String mname);
+	List<Movie> movieAmount (String start,String end);
+	List<Movie> findMovie(String type);
 	Movie movie(String mid);
 	
 }

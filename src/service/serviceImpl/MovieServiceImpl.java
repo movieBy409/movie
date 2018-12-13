@@ -43,9 +43,27 @@ public class MovieServiceImpl implements MovieService {
 			sql += " where mname like ? ";
 			params.add("%"+mname+"%");
 		}
-		System.out.println("size:  "+params.size());
 		List<Movie> findmovie = DBHelper.select(sql, Movie.class, params);
 		return findmovie;
+	}
+
+	@Override
+	public List<Movie> movieType(String type) {
+		String sql = "select * from movie";
+		List<String> params= new ArrayList<>();
+		if (type != null && !type.trim().equals("")) {
+			sql += " where type like ? ";
+			params.add("%"+type+"%");
+		}
+		List<Movie> movietype = DBHelper.select(sql, Movie.class, params);
+		return movietype;
+	}
+
+	@Override
+	public List<Movie> movieAmount(String start, String end) {
+		String sql = "select * from movie where price>=? and price<=? ";
+		List<Movie> movieamount = DBHelper.select(sql, Movie.class, start,end);
+		return movieamount;
 	}
 
 }

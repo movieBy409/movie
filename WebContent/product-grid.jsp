@@ -29,6 +29,7 @@
 
 <!-- Modernizr JS -->
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+
 </head>
 
 <body>
@@ -298,20 +299,23 @@
 						<div class="htc-grid-range">
 							<h4 class="title__line--4">电影价格</h4>
 							<div class="content-shopby">
-								<div class="price_filter s-filter clear">
-									<form action="#" method="GET">
+								<div class="price_filter s-filter clear"> 
+								
+									<form action="movie?oper=movieamount" method="POST">
 										<div id="slider-range"></div>
 										<div class="slider__range--output">
 											<div class="price__output--wrap">
 												<div class="price--output">
-													<span>价格 :</span><input type="text" id="amount" readonly>
+													<span>价格 :</span>	<input type="text" id="amount" name="amount" readonly>
 												</div>
-												<div class="price--filter">
-													<a href="#">Filter</a>
+												 <div class="price--filter">
+													<p onclick="search()" >Search</p>
 												</div>
+												
 											</div>
 										</div>
 									</form>
+									
 								</div>
 							</div>
 						</div>
@@ -643,6 +647,29 @@
 <script src="js/waypoints.min.js"></script>
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+
+  function search() {
+
+	  var amount=$("#amount").val();
+	  
+	  
+	  //window.location.href="movie?oper=movieamount&amount="+amount;
+	  
+	  
+	  $.ajax({
+          type: "POST",
+          url: "movie?oper=movieamount",
+          data:"amount="+amount,
+          cache: false, //不缓存此页面
+          success: function (data) {
+              	 
+          }
+      });
+}
+
+</script>
 
 </body>
 </html>
