@@ -354,8 +354,9 @@
 											<div class="slider__range--output">
 												<div class="price__output--wrap">
 													<div class="price--output">
-														<span>价格 :</span> <input type="text" id="amount"
-															name="amount" readonly>
+														<span>价格 :</span> 
+														<input type="text" id="amount"
+															name="amount" value="${amount }"  readonly>
 													</div>
 													<div class="price--filter">
 														<p onclick="search()">Search</p>
@@ -384,70 +385,6 @@
 									<li><a href="movie?oper=movietype&type=犯罪">犯罪</a></li>
 								</ul>
 							</div>
-							<!-- End Category Area -->
-
-							<!-- Start Pro Color  
-						<div class="ht__pro__color">
-							<h4 class="title__line--4">color</h4>
-							<ul class="ht__color__list">
-								<li class="grey"><a href="#">grey</a></li>
-								<li class="lamon"><a href="#">lamon</a></li>
-								<li class="white"><a href="#">white</a></li>
-								<li class="red"><a href="#">red</a></li>
-								<li class="black"><a href="#">black</a></li>
-								<li class="pink"><a href="#">pink</a></li>
-							</ul>
-						</div>
-						 -->
-							<!-- End Pro Color -->
-
-
-							<!-- Start Pro Size 
-						<div class="ht__pro__size">
-							<h4 class="title__line--4">Size</h4>
-							<ul class="ht__size__list">
-								<li><a href="#">xs</a></li>
-								<li><a href="#">s</a></li>
-								<li><a href="#">m</a></li>
-								<li><a href="#">reld</a></li>
-								<li><a href="#">xl</a></li>
-							</ul>
-						</div>-->
-							<!-- End Pro Size    -->
-							<!-- Start Tag Area   <div class="htc__tag">
-							<h4 class="title__line--4">tags</h4>
-							<ul class="ht__tag__list">
-								<li><a href="#">Clothing</a></li>
-								<li><a href="#">bag</a></li>
-								<li><a href="#">Shoes</a></li>
-								<li><a href="#">Jewelry</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Aceessories</a></li>
-								<li><a href="#">Store</a></li>
-								<li><a href="#">Watch</a></li>
-								<li><a href="#">Other</a></li>
-							</ul>
-						</div>-->
-
-							<!-- End Tag Area -->
-
-
-							<!-- Start Compare Area 
-    						<div class="htc__compare__area">
-							<h4 class="title__line--4">compare</h4>
-							<ul class="htc__compare__list">
-								<li><a href="#">White men’s polo<i class="icon-trash icons"></i></a></li>
-								<li><a href="#">T-shirt for style girl...<i class="icon-trash icons"></i></a></li>
-								<li><a href="#">Basic dress for women...<i class="icon-trash icons"></i></a></li>
-							</ul>
-							<ul class="ht__com__btn">
-								<li><a href="#">clear all</a></li>
-								<li class="compare"><a href="#">Compare</a></li>
-							</ul>
-						</div>
-						-->
-							<!-- End Compare Area -->
-
 
 							<!-- 显示畅销的电影    占时写死-->
 							<!-- Start Best Sell Area  -->
@@ -729,18 +666,16 @@
 		function search() {
 
 			var amount = $("#amount").val();
+			window.location.href="movie?oper=movieamount&amount="+amount; 
 
-			//window.location.href="movie?oper=movieamount&amount="+amount;
-
-			$.ajax({
+			/* $.ajax({
 				type : "POST",
-				url : "movie?oper=movieamount",
-				data : "amount=" + amount,
+				url : "movie?oper=like",
+				data : "mid=" +mid+"uid="+uid
 				cache : false, //不缓存此页面
 				success : function(data) {
-
 				}
-			});
+			}); */
 		}
 	</script>
 

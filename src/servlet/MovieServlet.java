@@ -130,8 +130,9 @@ public class MovieServlet extends HttpServlet {
 			int currentPage = Integer.parseInt(currentPageStr); // 当前页码
 			String amount = req.getParameter("amount");
 			if (amount != null && !"".equals(amount)) {
-				String start = amount.substring(amount.indexOf("$") + 1, amount.indexOf(" - "));
-				String end = amount.substring(amount.lastIndexOf("$") + 1);
+				
+				String start = amount.substring(amount.indexOf("Y") + 1, amount.indexOf("-"));
+				String end = amount.substring(amount.lastIndexOf("Y") + 1);
 				List<Movie> movieamount = movieService.movieAmount(start, end);
 				int totalCount = movieamount.size();// 获得电影的总条数
 				int totalPage = (int) Math.ceil(1.0 * totalCount / currentCount); // 需要分页个数
@@ -141,8 +142,16 @@ public class MovieServlet extends HttpServlet {
 				pagemovie.setTotalPage(totalPage);
 				pagemovie.setCurrentPage(currentPage);
 				req.setAttribute("allmovie", pagemovie);
+				req.setAttribute("amount", amount);
 			}
+			
 			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
+		}else if("like".equals(oper)){
+			
+			// 喜欢  收藏功能
+			String uid=req.getParameter("uid");
+			String mid=req.getParameter("mid");
+			
 		}
 
 	}
