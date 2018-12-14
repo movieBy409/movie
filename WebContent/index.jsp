@@ -58,7 +58,7 @@
 								<ul class="main__menu">
 									<li><a href="movie?oper=index">首页</a>
 									<li><a href="movie?oper=all">所有电影</a></li>
-									<li><a href="movie?oper=movieinfo&mid=${movie.mid}">详情信息</a></li>
+									<li><a href="#">关于我们</a></li>
 								</ul>
 							</nav>
 
@@ -83,13 +83,11 @@
 								</div>
 								<div class="htc__shopping__cart">
 									<a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
-									<a href="#"><span class="htc__qua">2</span></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="mobile-menu-area"></div>
 			</div>
 		</div>
 		<!-- End Mainmenu Area -->
@@ -97,6 +95,8 @@
 	<!-- End Header Area -->
 
 	<div class="body__overlay"></div>
+	
+	
 	<!-- Start Offset Wrapper -->
 	<div class="offset__wrapper">
 		<!-- Start Search Popap -->
@@ -118,55 +118,52 @@
 			</div>
 		</div>
 		<!-- End Search Popap -->
-		<!-- Start Cart Panel -->
+		
+		
+		
+		
+		<!-- Start Cart Panel 购物车面板-->
 		<div class="shopping__cart">
 			<div class="shopping__cart__inner">
 				<div class="offsetmenu__close__btn">
 					<a href="#"><i class="zmdi zmdi-close"></i></a>
 				</div>
+				
 				<div class="shp__cart__wrap">
+				    <!-- 购物车物品显示 -->
 					<div class="shp__single__product">
 						<div class="shp__pro__thumb">
 							<a href="#">
-								<img src="images/product-2/sm-smg/1.jpg" alt="product images">
+								<img src="images/product-2/sm-smg/t1.jpg" alt="product images">
 							</a>
 						</div>
 						<div class="shp__pro__details">
-							<h2><a href="movie?oper=movieinfo&mid=${movie.mid}">BO&Play Wireless Speaker</a></h2>
-							<span class="quantity">QTY: 1</span>
-							<span class="shp__price">$105.00</span>
+							<h2><a href="movie?oper=movieinfo&mid=3">海王</a></h2>
+							<span class="quantity">个数: 1</span>
+							<span class="shp__price">$43</span>
 						</div>
 						<div class="remove__btn">
+						
 							<a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
 						</div>
 					</div>
-					<div class="shp__single__product">
-						<div class="shp__pro__thumb">
-							<a href="#">
-								<img src="images/product-2/sm-smg/2.jpg" alt="product images">
-							</a>
-						</div>
-						<div class="shp__pro__details">
-							<h2><a href="movie?oper=movieinfo&mid=${movie.mid}">Brone Candle</a></h2>
-							<span class="quantity">QTY: 1</span>
-							<span class="shp__price">$25.00</span>
-						</div>
-						<div class="remove__btn">
-							<a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
-						</div>
-					</div>
+					
 				</div>
 				<ul class="shoping__total">
-					<li class="subtotal">Subtotal:</li>
-					<li class="total__price">$130.00</li>
+					<li class="subtotal">总金额:</li>
+					<li class="total__price">$43</li>
 				</ul>
 				<ul class="shopping__btn">
-					<li><a href="#">View Cart</a></li>
-					<li class="shp__checkout"><a href="#">Checkout</a></li>
+					<li><a href="#">结算</a></li>
+					<li class="shp__checkout"><a href="#">清空</a></li>
 				</ul>
 			</div>
 		</div>
 		<!-- End Cart Panel -->
+		
+		
+		
+		
 	</div>
 	<!-- End Offset Wrapper -->
 	<!-- Start Slider Area -->

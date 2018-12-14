@@ -54,7 +54,7 @@
 									<ul class="main__menu">
 										<li><a href="movie?oper=index">首页</a>
 										<li><a href="movie?oper=all">所有电影</a></li>
-										<li><a href="product-details.jsp">详细信息</a></li>
+										<li><a href="#">关于我们</a></li>
 									</ul>
 								</nav>
 

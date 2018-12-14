@@ -51,7 +51,7 @@
 								<ul class="main__menu">
 									<li><a href="movie?oper=index">首页</a>
 									<li><a href="movie?oper=all">所有电影</a></li>
-									<li><a href="product-details.jsp">详细信息</a></li>
+									<li><a href="#">关于我们</a></li>
 								</ul>
 							</nav>
 
@@ -164,7 +164,7 @@
 	<!-- End Offset Wrapper -->
 	<!-- Start Bradcaump area -->
 	<div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;">
-		<div class="ht__bradcaump__wrap">
+		<div class="ht__bradcaump__wrap" width:100% >
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
