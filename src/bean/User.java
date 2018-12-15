@@ -7,12 +7,47 @@ public class User {
 	private String pwd;
 	private String uimage;
 	private String account;
+	private String addr;
+	private String sign;
+	private String sex;
+	private String tel;
+	private String birthday;
+	
 	@Override
 	public String toString() {
 		return "User [uid=" + uid + ", uname=" + uname + ", pwd=" + pwd + ", uimage=" + uimage + ", account=" + account
-				+ ", getUid()=" + getUid() + ", getUname()=" + getUname() + ", getPwd()=" + getPwd() + ", getUimage()="
-				+ getUimage() + ", getAccount()=" + getAccount() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", addr=" + addr + ", sign=" + sign + ", sex=" + sex + ", tel=" + tel + ", birthday=" + birthday
+				+ "]";
+	}
+	public String getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getSign() {
+		return sign;
+	}
+	public void setSign(String sign) {
+		this.sign = sign;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 	public long getUid() {
 		return uid;

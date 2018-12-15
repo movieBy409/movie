@@ -5,7 +5,11 @@ import dao.DBHelper;
 import service.UserService;
 
 public class UserServiceImpl implements UserService {
-
+	@Override
+	public int updateHead(String uid, String uploadPath) {
+		int result = DBHelper.update("update user set head = ? where uid = ?", uploadPath,uid);
+		return result;
+	}
 	@Override
 	public User login(String account, String pwd) {
 		/**
