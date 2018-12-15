@@ -1,7 +1,14 @@
 package bean;
 
 public class Movie {
-     private Long mid;
+	private double money;
+     public double getMoney() {
+		return money;
+	}
+	public void setMoney(double money) {
+		this.money = money;
+	}
+	private Long mid;
      private String mname;
      private String introduction;
      private String price;
