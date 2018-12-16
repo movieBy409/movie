@@ -8,10 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.MessageAndUser;
 import bean.Movie;
+import bean.Order;
 import bean.PageBean;
+import bean.User;
 import service.MovieService;
 import service.serviceImpl.MovieServiceImpl;
 import service.serviceImpl.UserServiceImpl;
@@ -35,11 +38,21 @@ public class MovieServlet extends HttpServlet {
 		}
 		// 主页显示排名前8的电影
 		if ("index".equals(oper)) {
-			
             String account=req.getParameter("account");
-            
 			List<Movie> movieList = movieService.topMovie();
 			req.setAttribute("movieList", movieList);
+			
+			
+			//显示订单信息
+			HttpSession session = req.getSession();
+			User user = null;
+			List<Order> orderList= null;
+			user=(User) session.getAttribute("user");
+			if(user!=null) {
+				Long uid=user.getUid();
+			    orderList=  movieService.movieOrder(uid);
+			}
+			req.setAttribute("orderList", orderList);
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 			return;
 		} else if ("all".equals(oper)) {
@@ -61,6 +74,18 @@ public class MovieServlet extends HttpServlet {
 			pagemovie.setTotalCount(totalCount);
 			pagemovie.setTotalPage(totalPage);
 			req.setAttribute("allmovie", pagemovie);
+			
+			//显示订单信息
+			HttpSession session = req.getSession();
+			User user = null;
+			List<Order> orderList= null;
+			user=(User) session.getAttribute("user");
+			if(user!=null) {
+				Long uid=user.getUid();
+			    orderList=  movieService.movieOrder(uid);
+			}
+			req.setAttribute("orderList", orderList);
+			
 			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
 			return;
 
@@ -77,8 +102,19 @@ public class MovieServlet extends HttpServlet {
 			else{
 				req.setAttribute("number", board.size());
 			}
-			
 			req.setAttribute("movie", movie);
+			
+			//显示订单信息
+			HttpSession session = req.getSession();
+			User user = null;
+			List<Order> orderList= null;
+			user=(User) session.getAttribute("user");
+			if(user!=null) {
+				Long uid=user.getUid();
+			    orderList=  movieService.movieOrder(uid);
+			}
+			req.setAttribute("orderList", orderList);
+			
 			
 			req.getRequestDispatcher("product-details.jsp").forward(req, resp);
 		} else if ("findmovie".equals(oper)) {

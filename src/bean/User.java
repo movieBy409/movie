@@ -12,13 +12,21 @@ public class User {
 	private String sex;
 	private String tel;
 	private String birthday;
-	
+	private String money;
+		
+	public String getMoney() {
+		return money;
+	}
 	@Override
 	public String toString() {
 		return "User [uid=" + uid + ", uname=" + uname + ", pwd=" + pwd + ", uimage=" + uimage + ", account=" + account
 				+ ", addr=" + addr + ", sign=" + sign + ", sex=" + sex + ", tel=" + tel + ", birthday=" + birthday
-				+ "]";
+				+ ", money=" + money + "]";
 	}
+	public void setMoney(String money) {
+		this.money = money;
+	}
+
 	public String getBirthday() {
 		return birthday;
 	}

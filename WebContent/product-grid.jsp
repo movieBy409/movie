@@ -78,8 +78,7 @@
 									</div>
 									<div class="htc__shopping__cart">
 										<a class="cart__menu" href="#"><i
-											class="icon-handbag icons"></i></a> <a href="#"><span
-											class="htc__qua">2</span></a>
+											class="icon-handbag icons"></i></a> 
 									</div>
 								</div>
 							</div>
@@ -121,49 +120,28 @@
 					<div class="offsetmenu__close__btn">
 						<a href="#"><i class="zmdi zmdi-close"></i></a>
 					</div>
-					<div class="shp__cart__wrap">
+						<div class="shp__cart__wrap">
+				    <!-- 购物车物品显示 -->
+				    <c:forEach items="${orderList}" var="order">
 						<div class="shp__single__product">
 							<div class="shp__pro__thumb">
-								<a href="#"> <img src="images/product-2/sm-smg/1.jpg"
-									alt="product images">
+								<a href="movie?oper=movieinfo&mid=${order.mid}">
+									<img src="${order.mimage}" alt="product images">
 								</a>
 							</div>
 							<div class="shp__pro__details">
-								<h2>
-									<a href="product-details.jsp">BO&Play Wireless Speaker</a>
-								</h2>
-								<span class="quantity">QTY: 1</span> <span class="shp__price">$105.00</span>
+								<h2><a href="movie?oper=movieinfo&mid=${order.mid}">${order.mname }</a></h2>
+								<span class="quantity">购买时间:${order.odate}</span>
+								<span class="shp__price">$${order.price }</span>
 							</div>
 							<div class="remove__btn">
-								<a href="#" title="Remove this item"><i
-									class="zmdi zmdi-close"></i></a>
+								<a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
 							</div>
 						</div>
-						<div class="shp__single__product">
-							<div class="shp__pro__thumb">
-								<a href="#"> <img src="images/product-2/sm-smg/2.jpg"
-									alt="product images">
-								</a>
-							</div>
-							<div class="shp__pro__details">
-								<h2>
-									<a href="product-details.jsp">Brone Candle</a>
-								</h2>
-								<span class="quantity">QTY: 1</span> <span class="shp__price">$25.00</span>
-							</div>
-							<div class="remove__btn">
-								<a href="#" title="Remove this item"><i
-									class="zmdi zmdi-close"></i></a>
-							</div>
-						</div>
+				    </c:forEach>
 					</div>
-					<ul class="shoping__total">
-						<li class="subtotal">Subtotal:</li>
-						<li class="total__price">$130.00</li>
-					</ul>
 					<ul class="shopping__btn">
-						<li><a href="#">View Cart</a></li>
-						<li class="shp__checkout"><a href="#">Checkout</a></li>
+						<li class="shp__checkout"><a href="#">清空全部订单</a></li>
 					</ul>
 				</div>
 			</div>

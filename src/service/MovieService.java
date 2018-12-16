@@ -4,6 +4,7 @@ import java.util.List;
 
 import bean.MessageAndUser;
 import bean.Movie;
+import bean.Order;
 
 public interface MovieService {
 	List<Movie> topMovie();
@@ -14,5 +15,5 @@ public interface MovieService {
 	List<Movie> findMovie(String type);
 	Movie movie(String mid);
 	List<MessageAndUser> board(String movieid);
-	
+	List<Order> movieOrder(Long uid);
 }

@@ -2,10 +2,10 @@ package service.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import bean.Message;
 import bean.MessageAndUser;
 import bean.Movie;
+import bean.Order;
 import bean.User;
 import dao.DBHelper;
 import service.MovieService;
@@ -71,6 +71,9 @@ public class MovieServiceImpl implements MovieService {
 
 	@Override
 	public List<Movie> movieAmount(String start, String end) {
+		/**
+		 * 通过电影价格范围搜索
+		 */
 		String sql = "select * from movie where price>=? and price<=? ";
 		List<Movie> movieamount = DBHelper.select(sql, Movie.class, start, end);
 		return movieamount;
@@ -98,5 +101,13 @@ public class MovieServiceImpl implements MovieService {
 		}
 		return board;
 	}
+	public List<Order> movieOrder(Long uid) {
+		/**
+		 * 获得用户订单信息
+		 */
+		List<Order> orderList=DBHelper.select("select * from order1 where uid=?", Order.class,uid);	
+		return orderList;
+	}
+
 
 }
