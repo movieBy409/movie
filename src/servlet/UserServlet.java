@@ -47,7 +47,7 @@ public class UserServlet extends HttpServlet {
 		}
 
 		System.out.println(oper);
-		
+
 		if ("login".equals(oper)) {
 			/**
 			 * 用户进行登录操作
@@ -58,35 +58,44 @@ public class UserServlet extends HttpServlet {
 				resp.getWriter().write("error");
 				return;
 			} else {
-				// 登录成功  将user 写进去
+				// 登录成功 将user 写进去
 				user.setPwd("");
 				req.getSession().setAttribute("user", user);
-				resp.getWriter().write("movie?oper=index&account="+account);
+				resp.getWriter().write("movie?oper=index&account=" + account);
 				return;
 			}
-		}else if("register".equals(oper)){
+		} else if ("register".equals(oper)) {
 			/**
 			 * 对用户进行注册操作
 			 */
 			userService.register(account, pwd);
-		}else if ("updateHead".equals(oper)) {
+		} else if ("updateHead".equals(oper)) {
 			updateHead(req, resp);
 			return;
-		}else if("info".equals(oper)){
+		} else if ("info".equals(oper)) {
 			req.getRequestDispatcher("info.jsp").forward(req, resp);
-			return  ;
+			return;
+		} else if ("cost".equals(oper)) {
+			String uid = req.getParameter("uid");
+			String price = req.getParameter("price");
+			String mid = req.getParameter("mid");
+			boolean isTransferSuccess = userService.transfer(uid, price, mid);
+			if (isTransferSuccess==false) {
+				resp.getWriter().write("error");
+			} else {
+			}
 		}
 	}
-	
+
 	private void updateHead(HttpServletRequest req, HttpServletResponse resp) {
 		String uid = req.getParameter("uid");
-		
+
 		// 创建接收文件的工厂类
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		// 常见文件解析对象
 		ServletFileUpload sfu = new ServletFileUpload(factory);
 		// 设置单个文件的最大值，以字节为单位
-		sfu.setFileSizeMax(1024*1024*2);
+		sfu.setFileSizeMax(1024 * 1024 * 2);
 		List<FileItem> fList;
 		try {
 			fList = sfu.parseRequest(req);
@@ -111,25 +120,25 @@ public class UserServlet extends HttpServlet {
 					File tfile = new File(tuploadPath, uuid + suffix);
 					File file = new File(uploadPath, uuid + suffix);
 					InputStream is = fi.getInputStream();
-					//写入磁盘
+					// 写入磁盘
 					fi.write(tfile);
 					InputStream bis = new BufferedInputStream(is);
 					OutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
 					byte[] bs = new byte[1024];
 					int length = 0;
-					while((length = bis.read(bs, 0, bs.length)) != -1){
+					while ((length = bis.read(bs, 0, bs.length)) != -1) {
 						bos.write(bs, 0, bs.length);
-						bos.flush();//清空缓冲区，迫使缓冲区的数据全部写出
+						bos.flush();// 清空缓冲区，迫使缓冲区的数据全部写出
 					}
 					bis.close();
 					bos.close();
 					tuploadPath = "upload/" + uuid + suffix;
-					int result = userService.updateHead(uid,tuploadPath);
-					if(result > 0){
+					int result = userService.updateHead(uid, tuploadPath);
+					if (result > 0) {
 						resp.getWriter().append("头像上传成功");
-						User u=(User) req.getSession().getAttribute("user");
+						User u = (User) req.getSession().getAttribute("user");
 						u.setUimage(tuploadPath);
-					}else{
+					} else {
 						resp.getWriter().append("服务繁忙，请稍后重试");
 					}
 				}
@@ -137,9 +146,9 @@ public class UserServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 			try {
-				if( e instanceof FileSizeLimitExceededException){
+				if (e instanceof FileSizeLimitExceededException) {
 					resp.getWriter().append("上传失败，图片过大");
-				}else{
+				} else {
 					resp.getWriter().append("服务繁忙，请稍后重试");
 				}
 			} catch (IOException e1) {
