@@ -51,18 +51,18 @@ public class UserServiceImpl implements UserService {
 			conn = DBHelper.getCon();
 			// 开启事务
 			conn.setAutoCommit(false);// 开启事务
+			
 			Statement stmt = conn.createStatement();
 			// 转出钱的方法
 			stmt.executeUpdate("update user set money=money-" + price + "where uid=" + uid);
 			// 转入钱的方法
 			stmt.executeUpdate("update user set money=money+" + price + "where uid=1");
-			
 			//订单的生成
 			Date date =new Date();
 			SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Movie movie = (Movie) DBHelper.unique("select * from movie where mid=?",Movie.class,mid);
 			String format = sdf.format(date);
-			DBHelper.update("insert into order1 values(7,?,?,?,?,?,?)",uid,mid,format,movie.getMname(),movie.getMimage(),price);
+			DBHelper.update("insert into order1 (uid,mid,odate,mname,mimage,price) values (?,?,?,?,?,?)",uid,mid,format,movie.getMname(),movie.getMimage(),price);
 		} catch (Exception e) {
 			isTranferSuccess = false;
 			// 回滚事务

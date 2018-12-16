@@ -46,8 +46,11 @@ public class DBHelper {
 	}
 
 	public static Connection getCon() {
+            Connection con=null;
 		try {
-			return DriverManager.getConnection(URL, USR, PWD);
+			con=DriverManager.getConnection(URL, USR, PWD);
+			con.setAutoCommit(false);
+			return con;
 		} catch (SQLException ex) {
 			return null ;
 		}
@@ -61,13 +64,13 @@ public class DBHelper {
 		
 		try {
 			if (con != null) {
+				con.commit();
 				con.close();
 			}
 		} catch (SQLException e) {
 			return ;
 		}
 	}
-
 	public static int update(String sql, Object... params) {
 
 		Connection con = getCon();
