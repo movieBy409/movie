@@ -79,7 +79,7 @@ public class DBHelper {
 			//  如果连接数据库失败  则conn 为空    返回  0
 			return  0;
 		}
-		
+
 		PreparedStatement pstm = null;
 		try {
 			System.out.println("SQL:" + sql);
