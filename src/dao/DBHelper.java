@@ -47,7 +47,11 @@ public class DBHelper {
 
 	public static Connection getCon() {
 		try {
-			return DriverManager.getConnection(URL, USR, PWD);
+			Connection con=DriverManager.getConnection(URL, USR, PWD);
+			if(con !=null ){
+				con.setAutoCommit(false);
+			}
+			return con;
 		} catch (SQLException ex) {
 			return null ;
 		}
@@ -58,9 +62,9 @@ public class DBHelper {
 		if(con==null){
 			return ;
 		}
-		
 		try {
 			if (con != null) {
+				con.commit();
 				con.close();
 			}
 		} catch (SQLException e) {
@@ -86,6 +90,42 @@ public class DBHelper {
 			System.out.println("update rows " + rows);
 			return rows;
 		} catch (SQLException e) {
+			return 0;
+		} finally {
+			close(con);
+		}
+	}
+	/**
+	 * 用于事物 的   处理   例如 转账的 失败  事物回滚
+	 * 
+	 * 需要自己 手动 close   传进来的   connection
+	 * @param sql
+	 * @param con
+	 * @param params
+	 * @return
+	 */
+	public static int update(String sql,Connection con, Object... params) {
+
+		if(con==null){
+			//  如果连接数据库失败  则conn 为空    返回  0
+			return  0;
+		}
+		
+		PreparedStatement pstm = null;
+		try {
+			System.out.println("SQL:" + sql);
+			pstm = con.prepareStatement(sql);
+			doParams(pstm, params);
+			int rows = pstm.executeUpdate();
+			System.out.println("update rows " + rows);
+			return rows;
+		} catch (SQLException e) {
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				
+				e1.printStackTrace();
+			}
 			return 0;
 		} finally {
 			close(con);
