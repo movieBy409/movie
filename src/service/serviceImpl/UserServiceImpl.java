@@ -3,7 +3,10 @@ package service.serviceImpl;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import bean.Movie;
 import bean.User;
 import dao.DBHelper;
 import service.UserService;
@@ -53,9 +56,13 @@ public class UserServiceImpl implements UserService {
 			stmt.executeUpdate("update user set money=money-" + price + "where uid=" + uid);
 			// 转入钱的方法
 			stmt.executeUpdate("update user set money=money+" + price + "where uid=1");
+			
 			//订单的生成
-			//stmt.executeUpdate("insert into order1 values('',"+uid+mid+")");
-
+			Date date =new Date();
+			SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Movie movie = (Movie) DBHelper.unique("select * from movie where mid=?",Movie.class,mid);
+			String format = sdf.format(date);
+			DBHelper.update("insert into order1 values(7,?,?,?,?,?,?)",uid,mid,format,movie.getMname(),movie.getMimage(),price);
 		} catch (Exception e) {
 			isTranferSuccess = false;
 			// 回滚事务
