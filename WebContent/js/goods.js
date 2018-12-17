@@ -121,8 +121,7 @@ $(function() {
 				"<div class=\"user-head\">" +
 				"<img src="+uimage+" />" +
 				"</div>" +
-				"<div class=\"user-name\">uname</div>" +
-				"<div class=\"user-reply\">回复</div>"+
+				"<div class=\"user-name\">"+uname+"</div>" +
 				"<div class=\"user-msg\">" + text + "</div>" +
 				"<div class=\"user-time\">" + getData() + "</div>" +
 				"</li>");
