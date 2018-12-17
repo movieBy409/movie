@@ -158,5 +158,34 @@ public class MovieServiceImpl implements MovieService {
 		}
 	}
 
+	@Override
+	public PageBean searchByKey(String key,String currentPage) {
+		/**
+		 *  蘑菇查询
+		 */
+		int pageNumber=1;
+		
+		try {
+			pageNumber=Integer.parseInt(currentPage);
+		} catch (NumberFormatException e) {
+			
+			
+		}
+		int start = currentCount*(pageNumber -1) ; //   分页查询的起始页数
+		List <Movie>list=DBHelper.select("select * from movie where mname like '%"+key+"%' limit ?, ? ", Movie.class,start,currentCount);
+		PageBean page=new PageBean();
+		if(list==null ||list.size()==0){
+			return null;
+		}
+		
+		page.setMovietList(list);
+		List <Movie> list1=DBHelper.select("select * from movie where mname like '%"+key+"%' ", Movie.class);
+		page.setCurrentPage(Integer.parseInt(currentPage));
+		page.setTotalPage((list1.size()%currentCount ==0)?(list1.size()/currentCount):(list1.size()/currentCount +1));
+
+		
+		return page;
+	}
+
 
 }

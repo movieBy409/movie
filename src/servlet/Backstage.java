@@ -33,13 +33,33 @@ public class Backstage extends HttpServlet {
 				currentPage="1";
 			}
 			PageBean page=movieService.pageMovieToBack(currentPage);
-			
+			req.setAttribute("movielist", "movielist");
 			req.setAttribute("page",page);
 			req.setAttribute("currentPage", currentPage);
 			req.getRequestDispatcher("list.jsp").forward(req, resp);
 			
 			
 			return ;
+		}
+		if("search".equals(oper)){
+			String currentPage=req.getParameter("currentPage");
+			
+			if(currentPage==null|| "".equals(currentPage)){
+				currentPage="1";
+			}
+			
+			String key=req.getParameter("key");
+			
+			key = new String(key.getBytes("ISO-8859-1"), "utf-8").toString();
+			req.setAttribute("search", "search");
+			if(key!=null){
+				req.setAttribute("key", key);
+			}
+			
+			PageBean page=movieService.searchByKey(key,currentPage);
+			req.setAttribute("page", page);
+			req.setAttribute("currentPage", currentPage);
+			req.getRequestDispatcher("list.jsp").forward(req, resp);
 		}
 		
 		if("del".equals(oper)){

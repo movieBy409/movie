@@ -23,4 +23,6 @@ public interface MovieService {
     
     int delMovieByMid(String mid);
     
+    PageBean searchByKey(String key,String currentPage);
+    
 }

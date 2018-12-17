@@ -23,7 +23,7 @@
         <li> <a class="button border-main icon-plus-square-o" href="add.jsp"> 添加内容</a> </li>
         <li>搜索：</li>
         <li>
-          <input type="text" placeholder="请输入搜索关键字" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
+          <input type="text" value="${key }" placeholder="请输入搜索关键字" id="searchkey" name="key" class="input" style="width:250px; line-height:17px;display:inline-block" />
           <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a></li>
       </ul>
     </div>
@@ -66,14 +66,17 @@
 		             </c:when>
 		             <c:otherwise>
 		             
-		                  <a href="backstage?oper=movielist&currentPage=${currentPage-1}">上一页</a> 
+		                  <c:if test="${movielist == 'movielist' }">
+		                        <a href="backstage?oper=movielist&currentPage=${currentPage-1}">上一页</a> 
+		                  </c:if>
+		                  
+		                  <c:if test="${search == 'search' }">
+		                        <a href="backstage?oper=search&currentPage=${currentPage-1}&key=${key}">上一页</a> 
+		                  </c:if>
 		                  
 		             </c:otherwise>
 		        
-		        
 		        </c:choose>
-		        
-		       
 		         
 		         <c:forEach begin="1" end="${page.totalPage }" step="1" varStatus="t">
 		         
@@ -83,16 +86,19 @@
 		                  </c:when>
 		                  
 		                  <c:otherwise>
-		                         <a class="current" href="backstage?oper=movielist&currentPage=${t.index }">${t.index }</a>
-		                  </c:otherwise>
-		             
+		                  
+		                         <c:if test="${movielist == 'movielist' }">
+		                       		  <a class="current" href="backstage?oper=movielist&currentPage=${t.index }">${t.index }</a>
+		                 		 </c:if>
+		                  
+				                  <c:if test="${search == 'search' }">
+				                        <a class="current" href="backstage?oper=search&currentPage=${t.index }&key=${key}">${t.index }</a>
+				                  </c:if>
+		                 
+						  </c:otherwise>
 		             </c:choose>
 		         
-		        
-		         
-		         
 		         </c:forEach>
-		         
 		         
 		         <c:choose>
 		             <c:when test="${ currentPage==page.totalPage }">
@@ -100,20 +106,29 @@
 		             </c:when>
 		             <c:otherwise>
 		             
-		                  <a href="backstage?oper=movielist&currentPage=${currentPage+1}">下一页</a> 
+		                  <c:if test="${movielist == 'movielist' }">
+		                        <a href="backstage?oper=movielist&currentPage=${currentPage+1}">上一页</a> 
+		                  </c:if>
+		                  
+		                  <c:if test="${search == 'search' }">
+		                        <a href="backstage?oper=search&currentPage=${currentPage+1}&key=${key}">上一页</a> 
+		                  </c:if>
 		                  
 		             </c:otherwise>
 		        
-		        
 		        </c:choose>
 		         
-		         <a href="backstage?oper=movielist&currentPage=${page.totalPage}">尾页</a> 
-		         
+		         <c:if test="${movielist == 'movielist' }">
+                       <a href="backstage?oper=movielist&currentPage=${page.totalPage}">尾页</a> 
+                 </c:if>
+                 
+                 <c:if test="${search == 'search' }">
+                       <a href="backstage?oper=search&currentPage=${page.totalPage}&key=${key}">尾页</a> 
+                 </c:if>
+        
 		         </div>
 		         </td>
 		      </tr>
-		      
-      
       
     </table>
   </div>
@@ -130,7 +145,8 @@
 
 //搜索
 function changesearch(){	
-		
+	var key=$("#searchkey").val();
+	window.location.href="backstage?oper=search&key="+key;
 }
 
 //单个删除
