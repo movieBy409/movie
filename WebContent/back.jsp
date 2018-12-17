@@ -43,7 +43,7 @@ $(function(){
 });
 </script>
 <div class="admin">
-  <iframe scrolling="auto" rameborder="0" src="list.html" name="right" width="100%" height="100%"></iframe>
+  <iframe scrolling="auto" rameborder="0" src="list.jsp" name="right" width="100%" height="100%"></iframe>
 </div>
 </body>
 </html>
