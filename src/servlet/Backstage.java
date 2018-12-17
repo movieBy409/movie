@@ -13,6 +13,7 @@ import bean.Movie;
 import bean.Order;
 import bean.PageBean;
 import bean.User;
+
 import service.MovieService;
 import service.UserService;
 import service.serviceImpl.MovieServiceImpl;
@@ -32,9 +33,27 @@ public class Backstage extends HttpServlet {
 		}
 		
 		if("movielist".equals(oper)){
-			List<Movie> list =movieService.allMovie();
-			req.setAttribute("list",list);
+			
+			String currentPage=req.getParameter("currentPage");
+			if(currentPage==null || "".equals(currentPage)){
+				currentPage="1";
+			}
+			PageBean page=movieService.pageMovieToBack(currentPage);
+			req.setAttribute("page",page);
+			req.setAttribute("currentPage", currentPage);
 			req.getRequestDispatcher("list.jsp").forward(req, resp);
+			return ;
+		}
+		if("del".equals(oper)){
+			// 删除电影
+			String mid=req.getParameter("mid");
+			String flag =movieService.delMovieByMid(mid)+"";
+			resp.getWriter().write(flag);
+			return ;
+		}
+		
+		if("back".equals(oper)){
+			req.getRequestDispatcher("back.jsp").forward(req, resp);
 			return ;
 		}
 		// 显示订单

@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh-cn">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,42 +27,106 @@
           <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a></li>
       </ul>
     </div>
-    <table class="table table-hover text-center">
+    <table  style="font-size: 18px ;" class="table table-hover text-center">
       <tr>
         <th width="100" style="text-align:left; padding-left:20px;">ID</th>
-        <th width="10%">名字</th>
+        <th width="5%">名字</th>
         <th>图片</th>
         <th>简介</th>
-        <th>属性</th>
-        <th>分类名称</th>
+        <th >属性</th>
+        <th >分类名称</th>
         <th width="10%">更新时间</th>
         <th width="310">操作</th>
       </tr>
       <volist name="list" id="vo">
       
+     <c:forEach items="${page.movietList}" var="movie">
      
-        <tr>
-          <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="" />
-           1</td>
-          <td><input type="text" name="sort[1]" value="1" style="width:50px; text-align:center; border:1px solid #ddd; padding:7px 0;" /></td>
-          <td width="10%"><img src="images/11.jpg" alt="" width="70" height="50" /></td>
-          <td>这是一套MUI后台精美管理系统，感谢您的支持</td>
-          <td><font color="#00CC99">正在热播</font></td>
-          <td>产品分类</td>
-          <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-        </tr>
+		       <tr id="${movie.mid }">
+		          <td style="text-align:left; padding-left:20px;">
+		          <%-- <input type="checkbox" name="mid" value="${movie.mid }" /> --%>
+		           ${movie.mid }</td>
+		          <td><input type="text" name="mname" value="${movie.mname }" style="width:120px; text-align:center; border:1px solid #ddd; padding:7px 0;" /></td>
+		          <td width="10%"><img src="${movie.mimage }" alt="" width="90" height="90px" /></td>
+		          <td>${movie.introduction }</td>
+		          <td><font color="#00CC99">正在热播</font></td>
+		          <td >${movie.type }</td>
+		          <td>${movie.mdate }</td>
+		          <td><div class="button-group">  <a class="button border-red" href="javascript:void(0)" onclick="return del('${movie.mid}')"><span class="icon-trash-o"></span> 删除</a> </div></td>
+		        </tr>
+		        
+     </c:forEach>
+		       <tr>
+		        <td colspan="8">
+		        <div class="pagelist">
+		        
+		        <c:choose>
+		             <c:when test="${ currentPage==1 }">
+		                    <span onclick="tishi1()">上一页</span>
+		             </c:when>
+		             <c:otherwise>
+		             
+		                  <a href="backstage?oper=movielist&currentPage=${currentPage-1}">上一页</a> 
+		                  
+		             </c:otherwise>
+		        
+		        
+		        </c:choose>
+		        
+		       
+		         
+		         <c:forEach begin="1" end="${page.totalPage }" step="1" varStatus="t">
+		         
+		             <c:choose>
+		                  <c:when test="${currentPage ==t.index }">
+		                  		  <span class="current"> ${t.index }</span>
+		                  </c:when>
+		                  
+		                  <c:otherwise>
+		                         <a class="current" href="backstage?oper=movielist&currentPage=${t.index }">${t.index }</a>
+		                  </c:otherwise>
+		             
+		             </c:choose>
+		         
+		        
+		         
+		         
+		         </c:forEach>
+		         
+		         
+		         <c:choose>
+		             <c:when test="${ currentPage==page.totalPage }">
+		                    <span onclick="tishi2()">下一页</span>
+		             </c:when>
+		             <c:otherwise>
+		             
+		                  <a href="backstage?oper=movielist&currentPage=${currentPage+1}">下一页</a> 
+		                  
+		             </c:otherwise>
+		        
+		        
+		        </c:choose>
+		         
+		         <a href="backstage?oper=movielist&currentPage=${page.totalPage}">尾页</a> 
+		         
+		         </div>
+		         </td>
+		      </tr>
+		      
       
-        
-        
-    
-      <tr>
-        <td colspan="8"><div class="pagelist"> <a href="">上一页</a> <span class="current">1</span><a href="">2</a><a href="">3</a><a href="">下一页</a><a href="">尾页</a> </div></td>
-      </tr>
+      
     </table>
   </div>
 </form>
 <script type="text/javascript">
+
+  function tishi1(){
+	  alert("已经是首页了");
+  }
+  
+  function tishi2(){
+	  alert("已经是尾页了")
+  }
 
 //搜索
 function changesearch(){	
@@ -71,9 +134,22 @@ function changesearch(){
 }
 
 //单个删除
-function del(id,mid,iscid){
+function del(mid){
 	if(confirm("您确定要删除吗?")){
-		console.log(id +"  "+  mid +"  "+ iscid);
+    	
+		   $.ajax({
+            type: "POST",
+            url: "backstage?oper=del",
+            data:"mid="+mid,
+            cache: false, //不缓存此页面
+            success: function (data) {
+                if(data=="0"){
+                	alert("系统繁忙");
+                }else {
+                	window.location.href="backstage?oper=movielist";
+                }
+            }
+        });
 	}
 }
 

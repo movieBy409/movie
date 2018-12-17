@@ -5,6 +5,7 @@ import java.util.List;
 import bean.MessageAndUser;
 import bean.Movie;
 import bean.Order;
+import bean.PageBean;
 
 public interface MovieService {
 	List<Movie> topMovie();
@@ -16,7 +17,13 @@ public interface MovieService {
 	Movie movie(String mid);
 	List<MessageAndUser> board(String movieid);
 	List<Order> movieOrder(Long uid);
-	List<Order> allOrder();
+
 	List<Order> pageOrder(int index, int currentCount);
 	void delOder(String oid);
+    
+    PageBean pageMovieToBack(String currentPage);
+    
+    int delMovieByMid(String mid);
+	List<Order> allOrder();
+    
 }
