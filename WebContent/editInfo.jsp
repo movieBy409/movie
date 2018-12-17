@@ -17,7 +17,9 @@
 		<!-- 头部引入 -->
 		<!-- 内容 -->
 		<div class="wrapper">
-		<input type="hidden" id="uid" value="">
+		
+		<input type="hidden" id="uid" value="${sessionScope.user.uid }">
+		     
 			<div class="title">
 				<div class="title-icon"></div>
 				<div class="title-text">我的信息</div>
@@ -25,7 +27,7 @@
 			<div class="my-info">
 				<form class="form-data">
 					<div>
-						昵称：<input type="text" id="username" class="username" value=""/>
+						昵称：<input type="text" id="username" class="username" value="${sessionScope.user.uname }"/>
 						<div class="from-error">昵称不能为空!</div>
 						<div class="from-error">昵称格式错误!</div>
 					</div>
@@ -34,24 +36,26 @@
 						<label>男</label>
 						<label>女</label>
 						<label>保密</label>
-						<input type="hidden" id="sex" value="" />
+						<input type="hidden" id="sex" value="${sessionScope.user.sex }" />
 					</div>
 					<div>
-						电话：<input type="text" id="tel" value="" />
+						电话：<input type="text" id="tel" value="${sessionScope.user.tel}" />
 						<div class="from-error">电话不能为空!</div>
 						<div class="from-error">电话格式错误!</div>
 					</div>
 					
 					<div>
-						地址：<input type="text" id="addr" value=""/>
+						地址：<input type="text" id="addr" value="${sessionScope.user.addr}"/>
 					</div>
 					
 					<div style="margin-left: 24px;">
-						个性签名：<input type="text" id="motto" value=""/>
+						个性签名：<input type="text" id="motto" value="${sessionScope.user.sign }"/>
 					</div>
 					<div style="margin-left: 24px;">
-						出生日期：<input id="date" type="date" value="" />
+					
+						出生日期：<input id="date" type="date"  value="${sessionScope.user.birthday }" />
 					</div>
+					
 					<button type="button" class="el-button el-button--primary"><span>保存</span></button>
 				</form>
 			</div>
@@ -64,7 +68,7 @@
 					<div class="img-clip-wrap">
 						<div class="clip-wrap" onclick="pic.click()">
 							<input id="pic" type="file" style="display: none;"/>
-							<img src="img/choice_pic.png" class="headpic">
+							<img src="${sessionScope.user.uimage }" class="headpic">
 						</div>
 						<span>预览头像</span>
 					</div>

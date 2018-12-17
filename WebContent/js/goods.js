@@ -73,7 +73,6 @@ $(function() {
 			var uimage=$("#uimage").val();
 			var uid=$("#uid").val();
 			var mid=$("#mid").val();
-			console.log(uname  +"  "+ uimage+ " "+ uid+"  "+mid);
 			
 			if(uid==''||uid==null ){
 				alert('请登录再进行留言');

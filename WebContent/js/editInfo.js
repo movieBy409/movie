@@ -64,7 +64,7 @@ $(function() {
 			var formData = new FormData();
 			formData.append('pic', $('#pic')[0].files[0]);  //文件
 			$.ajax({
-		        url: 'user.s?oper=updateHead&uid='+$("#uid").val(),
+		        url: 'user?oper=updateHead&uid='+$("#uid").val(),
 		        type: 'POST',
 		        cache: false,
 		        data: formData,
@@ -82,20 +82,30 @@ $(function() {
 	function updateInfo(){
 		$(".el-button").on("click", function() {
 			//获取值
-			var data = {}; //用来存储数据的对象
-			data.uname = $("#username").val().trim();
-			data.sex = $("#sex").val().trim();
-			data.tel = $("#tel").val().trim();
-			data.addr = $("#addr").val().trim();
+			var uname = $("#username").val().trim();
 			
-				var json = JSON.stringify(data);
+			var sex = $("#sex").val().trim();
+			
+			var tel = $("#tel").val().trim();
+			
+			var addr = $("#addr").val().trim();
+			
+			var sign = $("#motto").val().trim();
+			
+			var birthday = $("#date").val();
+			
 				$.ajax({
 					url : "user?oper=updateInfo&uid="+$("#uid").val(),
+					
 					type : "post",
-					data : "json="+json,
+					
+					data :"uname="+uname+"&sex="+sex+"&tel="+tel+"&addr="+addr+"&sign="+sign+"&birthday="+birthday,
+					
 					success : function(data){
+						
 						alert(data);
 						location.reload();
+						
 					}
 				});
 		});

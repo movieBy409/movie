@@ -15,7 +15,7 @@ import service.UserService;
 public class UserServiceImpl implements UserService {
 	@Override
 	public int updateHead(String uid, String uploadPath) {
-		int result = DBHelper.update("update user set head = ? where uid = ?", uploadPath, uid);
+		int result = DBHelper.update("update user set uimage = ? where uid = ?", uploadPath, uid);
 		return result;
 	}
 
@@ -89,6 +89,26 @@ public class UserServiceImpl implements UserService {
 			}
 		}
 		return isTranferSuccess;
+	}
+
+	@Override
+	public String updateInfo(User user) {
+		/**
+		 *    修改用户信息   
+		 */
+		
+		int result=DBHelper.update("update user set uname=? , addr =? , birthday=? ,tel =? , "
+				+ " sex =? , sign =? where uid=?",user.getUname() ,user.getAddr(),user.getBirthday(),
+				user.getTel(),user.getSex(),user.getSign(),user.getUid()
+				);
+		if(result>0){
+			// 修改成功
+			return "修改成功";
+		}else{
+			// 修改失败
+			return "修改失败";
+		}
+		
 	}
 
 }

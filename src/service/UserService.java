@@ -8,4 +8,5 @@ public interface UserService {
 	void register(String account,String pwd);
 	int updateHead(String uid, String uploadPath);
 	boolean transfer(String uid ,String price,String mid); 
+	String  updateInfo(User user);
 }
