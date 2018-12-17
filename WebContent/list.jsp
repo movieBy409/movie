@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh-cn">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -29,22 +31,24 @@
     <table class="table table-hover text-center">
       <tr>
         <th width="100" style="text-align:left; padding-left:20px;">ID</th>
-        <th width="10%">排序</th>
+        <th width="10%">名字</th>
         <th>图片</th>
-        <th>名称</th>
+        <th>简介</th>
         <th>属性</th>
         <th>分类名称</th>
         <th width="10%">更新时间</th>
         <th width="310">操作</th>
       </tr>
       <volist name="list" id="vo">
+      
+     
         <tr>
           <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="" />
            1</td>
           <td><input type="text" name="sort[1]" value="1" style="width:50px; text-align:center; border:1px solid #ddd; padding:7px 0;" /></td>
           <td width="10%"><img src="images/11.jpg" alt="" width="70" height="50" /></td>
           <td>这是一套MUI后台精美管理系统，感谢您的支持</td>
-          <td><font color="#00CC99">首页</font></td>
+          <td><font color="#00CC99">正在热播</font></td>
           <td>产品分类</td>
           <td>2016-07-01</td>
           <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>

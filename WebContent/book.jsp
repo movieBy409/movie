@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -35,15 +36,18 @@
         <th width="120">留言时间</th>
         <th>操作</th>       
       </tr>      
-        <tr>
-          <td><input type="checkbox" name="id[]" value="1" /> 1</td>
-          <td>神夜</td>
-          <td>13420925611</td> 
-           <td>深圳市民治街道</td>         
-          <td>这是一套后台UI，喜欢的朋友请多多支持谢谢。</td>
-          <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-        </tr>
+        <c:forEach items="" var="message" varStatus="vs" > 
+	        <tr>
+	          <td><input type="checkbox" name="id[]" value="1" /> 1</td>
+	          <td>神夜</td>
+	          <td>13420925611</td> 
+	           <td>深圳市民治街道</td>         
+	          <td>这是一套后台UI，喜欢的朋友请多多支持谢谢。</td>
+	          <td>2016-07-01</td>
+	          <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+	        </tr>
+        </c:forEach>
+        
       <tr>
         <td colspan="8">
         <div class="pagelist"> 
