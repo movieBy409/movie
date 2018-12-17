@@ -95,6 +95,7 @@ public class UserServlet extends HttpServlet {
 				}
 			}
 		}else if("editInfo".equals(oper)){
+			
 			req.getRequestDispatcher("editInfo.jsp").forward(req, resp);
 			return ;
 		}else if("updateInfo".equals(oper)){
