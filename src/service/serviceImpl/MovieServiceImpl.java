@@ -150,7 +150,7 @@ public class MovieServiceImpl implements MovieService {
 	public int delMovieByMid(String mid) {
 		
 		
-		int t= DBHelper.update("select * from movie where mid =? ",mid);
+		int t= DBHelper.update("delete from movie  where mid =? ",mid);
 		if(t>0){
 			return 1;
 		}else {
