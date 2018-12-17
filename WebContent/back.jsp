@@ -26,7 +26,7 @@
   <ul>
     <li><a href="list.html" target="right"><span class="icon-caret-right"></span>电影管理</a></li>
     <li><a href="book.jsp" target="right"><span class="icon-caret-right"></span>留言管理</a></li>       
-    <li><a href="book.html" target="right"><span class="icon-caret-right"></span>用户管理</a></li>  
+    <li><a href="book.jsp" target="right"><span class="icon-caret-right"></span>用户管理</a></li>  
   </ul>  
 </div>
 <script type="text/javascript">
