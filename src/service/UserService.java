@@ -9,4 +9,5 @@ public interface UserService {
 	int updateHead(String uid, String uploadPath);
 	boolean transfer(String uid ,String price,String mid); 
 	String  updateInfo(User user);
+	User userByUid(String uid);
 }

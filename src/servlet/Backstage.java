@@ -76,7 +76,6 @@ public class Backstage extends HttpServlet {
 			else {
 				resp.sendRedirect("back.jsp");
 			}
-			
 		}
 
 	}
