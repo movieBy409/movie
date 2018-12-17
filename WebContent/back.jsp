@@ -24,9 +24,9 @@
   <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
   <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
   <ul>
-    <li><a href="list.html" target="right"><span class="icon-caret-right"></span>电影管理</a></li>
+    <li><a href="list.jsp" target="right"><span class="icon-caret-right"></span>电影管理</a></li>
     <li><a href="book.jsp" target="right"><span class="icon-caret-right"></span>留言管理</a></li>       
-    <li><a href="book.html" target="right"><span class="icon-caret-right"></span>用户管理</a></li>  
+    <li><a href="book.jsp" target="right"><span class="icon-caret-right"></span>用户管理</a></li>  
   </ul>  
 </div>
 <script type="text/javascript">
