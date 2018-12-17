@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadBase.FileSizeLimitExceededException;
@@ -22,6 +23,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import bean.User;
+import dao.DBHelper;
 import service.UserService;
 import service.serviceImpl.UserServiceImpl;
 
@@ -45,9 +47,6 @@ public class UserServlet extends HttpServlet {
 			resp.sendRedirect("index.jsp");
 			return;
 		}
-
-		System.out.println(oper);
-
 		if ("login".equals(oper)) {
 			/**
 			 * 用户进行登录操作
@@ -60,7 +59,9 @@ public class UserServlet extends HttpServlet {
 			} else {
 				// 登录成功 将user 写进去
 				user.setPwd("");
-				req.getSession().setAttribute("user", user);
+				HttpSession session = req.getSession();
+				session.setAttribute("user", user);
+				session.setMaxInactiveInterval(30 * 60);
 				resp.getWriter().write("movie?oper=index&account=" + account);
 				return;
 			}
@@ -79,14 +80,20 @@ public class UserServlet extends HttpServlet {
 			String uid = req.getParameter("uid");
 			String price = req.getParameter("price");
 			String mid = req.getParameter("mid");
-			boolean isTransferSuccess = userService.transfer(uid, price, mid);
-			if (isTransferSuccess==false) {
-				resp.getWriter().write("error");
+			User user = DBHelper.unique("select * from user where uid=?", User.class, uid);
+			String money = user.getMoney();
+			
+			if (Double.parseDouble(price) > Double.parseDouble(money)) {
+				resp.getWriter().write("lack");
 			} else {
+				boolean isTransferSuccess = userService.transfer(uid, price, mid);
+				if (isTransferSuccess == false) {
+					resp.getWriter().write("error");
+				} else {
+				}
 			}
 		}
 	}
-
 	private void updateHead(HttpServletRequest req, HttpServletResponse resp) {
 		String uid = req.getParameter("uid");
 

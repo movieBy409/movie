@@ -38,26 +38,25 @@
 			var money = "${user.money}";
 			var price = "${movie.price}";
 			var mid ="${movie.mid}";
-			if (parseInt(money, 10) < parseInt(price, 10))
-				alert("您的用户金额不足");
-			else {
 				var uid = "${user.uid}";
-				
 				$.ajax({
 					type : "POST",
 					url : "user?oper=cost",
 					data : "uid=" + uid + "&price=" + price+ "&mid=" + mid,
 					cache : false, //不缓存此页面
 					success : function(data) {
+						//movie?oper=cost"
 						if (data == "error") {
 							alert("购买错误");
 						} else {
-							//movie?oper=cost"
+						     if(data=="lack")
+						    	 alert("您的用户金额不足,无法购买.");
+							else
 							alert("购票成功");
 						}
 					}
 				});
-			}
+			
 		}
 	}
 </script>
