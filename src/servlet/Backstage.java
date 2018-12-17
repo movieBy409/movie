@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.Movie;
 import bean.Order;
 import bean.PageBean;
 import bean.User;
@@ -17,9 +18,6 @@ import service.UserService;
 import service.serviceImpl.MovieServiceImpl;
 import service.serviceImpl.UserServiceImpl;
 
-/**
- * Servlet implementation class Backstage
- */
 @WebServlet("/backstage")
 public class Backstage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,6 +29,13 @@ public class Backstage extends HttpServlet {
 		String oper = req.getParameter("oper");
 		if (oper == null || "".equals(oper)) {
 			// 用户 不输入oper
+		}
+		
+		if("movielist".equals(oper)){
+			List<Movie> list =movieService.allMovie();
+			req.setAttribute("list",list);
+			req.getRequestDispatcher("list.jsp").forward(req, resp);
+			return ;
 		}
 		// 显示订单
 		if ("order".equals(oper)) {
