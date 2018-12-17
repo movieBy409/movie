@@ -109,5 +109,12 @@ public class MovieServiceImpl implements MovieService {
 		return orderList;
 	}
 
+	@Override
+	public List<Order> allOder() {
+		String sql="select * from order";
+		List<Order> allOder = DBHelper.select(sql, Order.class);
+		return allOder;
+	}
+
 
 }

@@ -25,7 +25,8 @@
   <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
   <ul>
     <li><a href="list.jsp" target="right"><span class="icon-caret-right"></span>电影管理</a></li>
-    <li><a href="book.jsp" target="right"><span class="icon-caret-right"></span>留言管理</a></li>       
+    <li><a href="backstage?oper=order" target="right"><span class="icon-caret-right"></span>订单管理</a></li> 
+    <li><a href="backstage?oper=message" target="right"><span class="icon-caret-right"></span>留言管理</a></li>    
     <li><a href="book.jsp" target="right"><span class="icon-caret-right"></span>用户管理</a></li>  
   </ul>  
 </div>
