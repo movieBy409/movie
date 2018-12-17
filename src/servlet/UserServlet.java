@@ -71,7 +71,9 @@ public class UserServlet extends HttpServlet {
 			 */
 			userService.register(account, pwd);
 		} else if ("updateHead".equals(oper)) {
+			
 			updateHead(req, resp);
+			
 			return;
 		} else if ("info".equals(oper)) {
 			req.getRequestDispatcher("info.jsp").forward(req, resp);
@@ -95,6 +97,38 @@ public class UserServlet extends HttpServlet {
 		}else if("editInfo".equals(oper)){
 			req.getRequestDispatcher("editInfo.jsp").forward(req, resp);
 			return ;
+		}else if("updateInfo".equals(oper)){
+			
+			
+			User user=new User();
+			
+			String uid =req.getParameter("uid");
+			
+			user.setUid(Long.parseLong(uid));
+			
+			String uname=req.getParameter("uname");
+			
+			user.setUname(uname);
+			
+			String sex=req.getParameter("sex");
+			user.setSex(sex);
+			
+			String tel=req.getParameter("tel");
+			user.setTel(tel);
+			
+			String addr=req.getParameter("addr");
+			user.setAddr(addr);
+			
+			String sign=req.getParameter("sign");
+			user.setSign(sign);
+			
+			String birthday=req.getParameter("birthday");
+			user.setBirthday(birthday);
+			
+			String falg =userService.updateInfo(user);
+			resp.getWriter().write(falg);
+			return ;
+			
 		}
 	}
 	private void updateHead(HttpServletRequest req, HttpServletResponse resp) {
