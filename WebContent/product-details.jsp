@@ -34,29 +34,29 @@
 		var user = "${user}";
 		if (user == "") {
 			alert("请先登录后在购票");
-		} else {			
+		} else {
 			var money = "${user.money}";
 			var price = "${movie.price}";
-			var mid ="${movie.mid}";
-				var uid = "${user.uid}";
-				$.ajax({
-					type : "POST",
-					url : "user?oper=cost",
-					data : "uid=" + uid + "&price=" + price+ "&mid=" + mid,
-					cache : false, //不缓存此页面
-					success : function(data) {
-						//movie?oper=cost"
-						if (data == "error") {
-							alert("购买错误");
-						} else {
-						     if(data=="lack")
-						    	 alert("您的用户金额不足,无法购买.");
-							else
+			var mid = "${movie.mid}";
+			var uid = "${user.uid}";
+			$.ajax({
+				type : "POST",
+				url : "user?oper=cost",
+				data : "uid=" + uid + "&price=" + price + "&mid=" + mid,
+				cache : false, //不缓存此页面
+				success : function(data) {
+					//movie?oper=cost"
+					if (data == "error") {
+						alert("购买错误");
+					} else {
+						if (data == "lack")
+							alert("您的用户金额不足,无法购买.");
+						else
 							alert("购票成功");
-						}
 					}
-				});
-			
+				}
+			});
+
 		}
 	}
 </script>
