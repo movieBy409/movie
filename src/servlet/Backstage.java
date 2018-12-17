@@ -8,8 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import bean.Movie;
 import bean.Order;
 import bean.PageBean;
 import bean.User;
@@ -31,30 +29,28 @@ public class Backstage extends HttpServlet {
 		if (oper == null || "".equals(oper)) {
 			// 用户 不输入oper
 		}
-		
-		if("movielist".equals(oper)){
-			
-			String currentPage=req.getParameter("currentPage");
-			if(currentPage==null || "".equals(currentPage)){
-				currentPage="1";
+		if ("movielist".equals(oper)) {
+			String currentPage = req.getParameter("currentPage");
+			if (currentPage == null || "".equals(currentPage)) {
+				currentPage = "1";
 			}
-			PageBean page=movieService.pageMovieToBack(currentPage);
-			req.setAttribute("page",page);
+			PageBean page = movieService.pageMovieToBack(currentPage);
+			req.setAttribute("page", page);
 			req.setAttribute("currentPage", currentPage);
 			req.getRequestDispatcher("list.jsp").forward(req, resp);
-			return ;
+			return;
 		}
-		if("del".equals(oper)){
+		if ("del".equals(oper)) {
 			// 删除电影
-			String mid=req.getParameter("mid");
-			String flag =movieService.delMovieByMid(mid)+"";
+			String mid = req.getParameter("mid");
+			String flag = movieService.delMovieByMid(mid) + "";
 			resp.getWriter().write(flag);
-			return ;
+			return;
 		}
-		
-		if("back".equals(oper)){
+
+		if ("back".equals(oper)) {
 			req.getRequestDispatcher("back.jsp").forward(req, resp);
-			return ;
+			return;
 		}
 		// 显示订单
 		if ("order".equals(oper)) {
@@ -77,22 +73,20 @@ public class Backstage extends HttpServlet {
 			pagebean.setTotalPage(totalPage);
 			req.setAttribute("pagebean", pagebean);
 			req.getRequestDispatcher("book.jsp").forward(req, resp);
-		}else if("delorder".equals(oper)) {
-			//删除订单
-			String oid =req.getParameter("oid");
+		} else if ("delorder".equals(oper)) {
+			// 删除订单
+			String oid = req.getParameter("oid");
 			movieService.delOder(oid);
 			resp.sendRedirect("backstage?oper=order");
-		}else if("login".equals(oper)) {
-			//账号登录
-			String account =req.getParameter("account");
-			String pwd =req.getParameter("pwd");
+		} else if ("login".equals(oper)) {
+			// 账号登录
+			String account = req.getParameter("account");
+			String pwd = req.getParameter("pwd");
 			User user = userService.login(account, pwd);
-			if(user==null)
-			{
-				//登录密码错误
+			if (user == null) {
+				// 登录密码错误
 				resp.sendRedirect("login1.html");
-			}
-			else {
+			} else {
 				resp.sendRedirect("back.jsp");
 			}
 		}

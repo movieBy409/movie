@@ -102,7 +102,6 @@ public class UserServlet extends HttpServlet {
 			return ;
 		}else if("updateInfo".equals(oper)){
 			
-			
 			User user=new User();
 			
 			String uid =req.getParameter("uid");

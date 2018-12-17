@@ -72,14 +72,14 @@
 					<div class="img-clip-wrap">
 						<div class="clip-wrap" onclick="pic.click()">
 							<input id="pic" type="file" style="display: none;"/>
-							<img src="${sessionScope.user.uimage }" class="headpic">
+							<img src="${user.uimage }" class="headpic">
 						</div>
 						<span>预览头像</span>
 					</div>
 					<div class="border-line"></div>
 					<div class="img-preview-wrap">
 						<div class="preview-wrap">
-							<img src="${sessionScope.user.uimage }"  class="headpic">
+							<img src="${user.uimage }"  class="headpic">
 						</div>
 						<span>当前头像</span>
 					</div>
