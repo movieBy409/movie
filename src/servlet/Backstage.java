@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.Order;
 import bean.PageBean;
+import bean.User;
 import service.MovieService;
+import service.UserService;
 import service.serviceImpl.MovieServiceImpl;
+import service.serviceImpl.UserServiceImpl;
 
 /**
  * Servlet implementation class Backstage
@@ -21,6 +24,7 @@ import service.serviceImpl.MovieServiceImpl;
 public class Backstage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MovieService movieService = new MovieServiceImpl();
+	private UserService userService = new UserServiceImpl();
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -49,6 +53,25 @@ public class Backstage extends HttpServlet {
 			pagebean.setTotalPage(totalPage);
 			req.setAttribute("pagebean", pagebean);
 			req.getRequestDispatcher("book.jsp").forward(req, resp);
+		}else if("delorder".equals(oper)) {
+			//删除订单
+			String oid =req.getParameter("oid");
+			movieService.delOder(oid);
+			resp.sendRedirect("backstage?oper=order");
+		}else if("login".equals(oper)) {
+			//账号登录
+			String account =req.getParameter("account");
+			String pwd =req.getParameter("pwd");
+			User user = userService.login(account, pwd);
+			if(user==null)
+			{
+				//登录密码错误
+				resp.sendRedirect("login1.html");
+			}
+			else {
+				resp.sendRedirect("back.jsp");
+			}
+			
 		}
 
 	}

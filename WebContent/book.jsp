@@ -17,18 +17,10 @@
 <body>
 <form method="post" action="">
   <div class="panel admin-panel">
-    <div class="panel-head"><strong class="icon-reorder"> 留言管理</strong></div>
-    <div class="padding border-bottom">
-      <ul class="search">
-        <li>
-          <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
-          <button type="submit" class="button border-red"><span class="icon-trash-o"></span> 批量删除</button>
-        </li>
-      </ul>
-    </div>
+    <div class="panel-head"><strong class="icon-reorder">订单管理</strong></div>
     <table class="table table-hover text-center">
       <tr>
-        <th width="120">ID</th>
+        <th width="120">序号</th>
         <th>订单号</th>       
         <th width="10%">电影图片</th>
         <th>电影名称</th>
@@ -38,13 +30,18 @@
       </tr>      
         <c:forEach items="${pagebean.movietList}" var="order" varStatus="vs" > 
 	        <tr>
-	          <td><input type="checkbox" name="id[]" value="1" /> ${vs.count }</td>
+	          <td>${vs.count }</td>
 	          <td>${order.oid }</td>
 	          <td width="10%"><img src="${order.mimage } " alt="" width="70px" height="70px" /></td> 
 	          <td>${order.mname }</td> 
 	          <td>$${order.price }</td>        
 	          <td>${order.odate }</td>
-	          <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+	          <td>
+		          <div class="button-group">
+		          	 <a class="button border-red" href="javascript:void(0)" onclick="return del('${order.oid }')">
+		          	 <span class="icon-trash-o"></span> 删除</a> 
+		          </div>
+	          </td>
 	        </tr>
         </c:forEach>
         
@@ -83,37 +80,10 @@
 </form>
 <script type="text/javascript">
 
-function del(id){
+function del(oid){
 	if(confirm("您确定要删除吗?")){
-		
-	}
-}
-
-$("#checkall").click(function(){ 
-  $("input[name='id[]']").each(function(){
-	  if (this.checked) {
-		  this.checked = false;
-	  }
-	  else {
-		  this.checked = true;
-	  }
-  });
-})
-
-function DelSelect(){
-	var Checkbox=false;
-	 $("input[name='id[]']").each(function(){
-	  if (this.checked==true) {		
-		Checkbox=true;	
-	  }
-	});
-	if (Checkbox){
-		var t=confirm("您确认要删除选中的内容吗？");
-		if (t==false) return false; 		
-	}
-	else{
-		alert("请选择您要删除的内容!");
-		return false;
+		//确认删除
+		location.href = "backstage?oper=delorder&oid="+oid;
 	}
 }
 </script>

@@ -18,4 +18,5 @@ public interface MovieService {
 	List<Order> movieOrder(Long uid);
 	List<Order> allOrder();
 	List<Order> pageOrder(int index, int currentCount);
+	void delOder(String oid);
 }

@@ -74,11 +74,19 @@
 										<a href="#"><i class="icon-magnifier icons"></i></a>
 									</div>
 									<div class="header__account">
-										<a href="#"><i class="icon-user icons"></i></a>
+										<c:choose>
+											<c:when test="${! empty sessionScope.user.uid }">
+												<a href="user?oper=editInfo&uid=${sessionScope.user.uid }"><i
+													class="icon-user icons"></i></a>
+											</c:when>
+											<c:otherwise>
+												<a href="login.html"><i class="icon-user icons"></i></a>
+											</c:otherwise>
+										</c:choose>
 									</div>
 									<div class="htc__shopping__cart">
 										<a class="cart__menu" href="#"><i
-											class="icon-handbag icons"></i></a> 
+											class="icon-handbag icons"></i></a>
 									</div>
 								</div>
 							</div>
@@ -120,25 +128,28 @@
 					<div class="offsetmenu__close__btn">
 						<a href="#"><i class="zmdi zmdi-close"></i></a>
 					</div>
-						<div class="shp__cart__wrap">
-				    <!-- 购物车物品显示 -->
-				    <c:forEach items="${orderList}" var="order">
-						<div class="shp__single__product">
-							<div class="shp__pro__thumb">
-								<a href="movie?oper=movieinfo&mid=${order.mid}">
-									<img src="${order.mimage}" alt="product images">
-								</a>
+					<div class="shp__cart__wrap">
+						<!-- 购物车物品显示 -->
+						<c:forEach items="${orderList}" var="order">
+							<div class="shp__single__product">
+								<div class="shp__pro__thumb">
+									<a href="movie?oper=movieinfo&mid=${order.mid}"> <img
+										src="${order.mimage}" alt="product images">
+									</a>
+								</div>
+								<div class="shp__pro__details">
+									<h2>
+										<a href="movie?oper=movieinfo&mid=${order.mid}">${order.mname }</a>
+									</h2>
+									<span class="quantity">购买时间:${order.odate}</span> <span
+										class="shp__price">$${order.price }</span>
+								</div>
+								<div class="remove__btn">
+									<a href="#" title="Remove this item"><i
+										class="zmdi zmdi-close"></i></a>
+								</div>
 							</div>
-							<div class="shp__pro__details">
-								<h2><a href="movie?oper=movieinfo&mid=${order.mid}">${order.mname }</a></h2>
-								<span class="quantity">购买时间:${order.odate}</span>
-								<span class="shp__price">$${order.price }</span>
-							</div>
-							<div class="remove__btn">
-								<a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
-							</div>
-						</div>
-				    </c:forEach>
+						</c:forEach>
 					</div>
 					<ul class="shopping__btn">
 						<li class="shp__checkout"><a href="#">清空全部订单</a></li>
@@ -281,18 +292,21 @@
 							<div class="col-xs-12">
 								<ul class="htc__pagenation">
 
-                                      <!-- 前一页按钮 -->
+									<!-- 前一页按钮 -->
 									<c:if test="${allmovie.currentPage==1 }">
-										<li><a href="javascript:void(0);"><i class="zmdi zmdi-chevron-left"></i></a></li>
+										<li><a href="javascript:void(0);"><i
+												class="zmdi zmdi-chevron-left"></i></a></li>
 									</c:if>
-									
-									<c:if test="${allmovie.currentPage!=1 }">
-				                           <li>
-					                          <li><a href="movie?oper=all&currentPage=${allmovie.currentPage-1 }"><i class="zmdi zmdi-chevron-left"></i></a></li>
-				 						   </li>
-									</c:if>	
 
-                                     <!-- 页面按钮 -->
+									<c:if test="${allmovie.currentPage!=1 }">
+										<li>
+										<li><a
+											href="movie?oper=all&currentPage=${allmovie.currentPage-1 }"><i
+												class="zmdi zmdi-chevron-left"></i></a></li>
+										</li>
+									</c:if>
+
+									<!-- 页面按钮 -->
 									<c:forEach begin="1" end="${allmovie.totalPage }" var="page">
 										<!-- 判断当前页 -->
 										<c:if test="${allmovie.currentPage==page }">
@@ -303,13 +317,16 @@
 										</c:if>
 									</c:forEach>
 
-                                     <!-- 后一页按钮 -->
-                                     <c:if test="${allmovie.currentPage==allmovie.totalPage }">
-				                               <li><a href="javascript:void(0);"><i class="zmdi zmdi-chevron-right"></i></a></li>
-			                         </c:if>
-			                         <c:if test="${allmovie.currentPage!=allmovie.totalPage }">
-			                          <li><a href="movie?oper=all&currentPage=${ allmovie.currentPage+1}"><i class="zmdi zmdi-chevron-right"></i></a></li>
-			                          </c:if>
+									<!-- 后一页按钮 -->
+									<c:if test="${allmovie.currentPage==allmovie.totalPage }">
+										<li><a href="javascript:void(0);"><i
+												class="zmdi zmdi-chevron-right"></i></a></li>
+									</c:if>
+									<c:if test="${allmovie.currentPage!=allmovie.totalPage }">
+										<li><a
+											href="movie?oper=all&currentPage=${ allmovie.currentPage+1}"><i
+												class="zmdi zmdi-chevron-right"></i></a></li>
+									</c:if>
 								</ul>
 							</div>
 						</div>
@@ -332,9 +349,8 @@
 											<div class="slider__range--output">
 												<div class="price__output--wrap">
 													<div class="price--output">
-														<span>价格 :</span> 
-														<input type="text" id="amount"
-															name="amount" value="${amount }"  readonly>
+														<span>价格 :</span> <input type="text" id="amount"
+															name="amount" value="${amount }" readonly>
 													</div>
 													<div class="price--filter">
 														<p onclick="search()">Search</p>
@@ -644,7 +660,7 @@
 		function search() {
 
 			var amount = $("#amount").val();
-			window.location.href="movie?oper=movieamount&amount="+amount; 
+			window.location.href = "movie?oper=movieamount&amount=" + amount;
 
 			/* $.ajax({
 				type : "POST",
