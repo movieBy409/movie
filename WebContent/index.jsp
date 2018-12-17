@@ -149,17 +149,16 @@
 				    </c:forEach>
 				</div>
 				<ul class="shopping__btn">
-					<li class="shp__checkout"><a href="#">清空全部订单</a></li>
+					<li class="shp__checkout"><a href="index.jsp">清空全部订单</a></li>
 				</ul>
 			</div>
 		</div>
 		<!-- End Cart Panel -->
-		
-		
-		
-		
 	</div>
 	<!-- End Offset Wrapper -->
+	
+	
+	
 	<!-- Start Slider Area -->
 	<div class="slider__container slider--one bg__cat--3">
 		<div class="slide__container slider__activation__wrap owl-carousel">

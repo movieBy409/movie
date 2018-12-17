@@ -1,6 +1,7 @@
 package service.serviceImpl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
@@ -49,20 +50,27 @@ public class UserServiceImpl implements UserService {
 		Connection conn = null;
 		try {
 			conn = DBHelper.getCon();
-			// 开启事务
 			conn.setAutoCommit(false);// 开启事务
 			Statement stmt = conn.createStatement();
+			
 			// 转出钱的方法
 			stmt.executeUpdate("update user set money=money-" + price + "where uid=" + uid);
 			// 转入钱的方法
 			stmt.executeUpdate("update user set money=money+" + price + "where uid=1");
-			
-			//订单的生成
-			Date date =new Date();
-			SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			Movie movie = (Movie) DBHelper.unique("select * from movie where mid=?",Movie.class,mid);
+			// 订单的生成
+			Date date = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Movie movie = (Movie) DBHelper.unique("select * from movie where mid=?", Movie.class, mid);
 			String format = sdf.format(date);
-			DBHelper.update("insert into order1 values(7,?,?,?,?,?,?)",uid,mid,format,movie.getMname(),movie.getMimage(),price);
+			String sql = "insert into order1 (uid,mid,odate,mname,mimage,price) values (?,?,?,?,?,?)";
+			PreparedStatement prestmt = conn.prepareStatement(sql);
+			prestmt.setString(1, uid);
+			prestmt.setString(2, mid);
+			prestmt.setString(3, format);
+			prestmt.setString(4, movie.getMname());
+			prestmt.setString(5, movie.getMimage());
+			prestmt.setString(6, price);
+			prestmt.execute();
 		} catch (Exception e) {
 			isTranferSuccess = false;
 			// 回滚事务
@@ -74,7 +82,7 @@ public class UserServiceImpl implements UserService {
 			e.printStackTrace();
 		} finally {
 			try {
-				isTranferSuccess=true;
+				isTranferSuccess = true;
 				conn.commit();
 			} catch (SQLException e) {
 				e.printStackTrace();

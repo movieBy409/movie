@@ -46,11 +46,13 @@ public class DBHelper {
 	}
 
 	public static Connection getCon() {
+            Connection con=null;
 		try {
-			Connection con=DriverManager.getConnection(URL, USR, PWD);
+			 con=DriverManager.getConnection(URL, USR, PWD);
 			if(con !=null ){
 				con.setAutoCommit(false);
 			}
+			con.setAutoCommit(false);
 			return con;
 		} catch (SQLException ex) {
 			return null ;
@@ -71,7 +73,6 @@ public class DBHelper {
 			return ;
 		}
 	}
-
 	public static int update(String sql, Object... params) {
 
 		Connection con = getCon();
@@ -80,7 +81,7 @@ public class DBHelper {
 			//  如果连接数据库失败  则conn 为空    返回  0
 			return  0;
 		}
-		
+
 		PreparedStatement pstm = null;
 		try {
 			System.out.println("SQL:" + sql);
