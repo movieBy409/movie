@@ -36,27 +36,31 @@
 						<label>男</label>
 						<label>女</label>
 						<label>保密</label>
-						<input type="hidden" id="sex" value="${sessionScope.user.sex }" />
+						<input type="hidden" id="sex" value="${user.sex }" />
 					</div>
 					<div>
-						电话：<input type="text" id="tel" value="${sessionScope.user.tel}" />
+						电话：<input type="text" id="tel" value="${user.tel}" />
 						<div class="from-error">电话不能为空!</div>
 						<div class="from-error">电话格式错误!</div>
 					</div>
 					
 					<div>
-						地址：<input type="text" id="addr" value="${sessionScope.user.addr}"/>
+						地址：<input type="text" id="addr" value="${user.addr}"/>
 					</div>
 					
 					<div style="margin-left: 24px;">
-						个性签名：<input type="text" id="motto" value="${sessionScope.user.sign }"/>
+						个性签名：<input type="text" id="motto" value="${user.sign}"/>
 					</div>
 					<div style="margin-left: 24px;">
 					
-						出生日期：<input id="date" type="date"  value="${sessionScope.user.birthday }" />
+						出生日期：<input id="date" type="date"  value="${user.birthday }" />
 					</div>
 					
-					<button type="button" class="el-button el-button--primary"><span>保存</span></button>
+					<div style="margin-left: 24px;">
+						<span>个人金额：${user.money }</span> 
+					</div>
+					
+					<button type="button" class="el-button el-button--primary" ><span>保存</span></button>
 				</form>
 			</div>
 			<div class="title">
@@ -68,14 +72,14 @@
 					<div class="img-clip-wrap">
 						<div class="clip-wrap" onclick="pic.click()">
 							<input id="pic" type="file" style="display: none;"/>
-							<img src="${sessionScope.user.uimage }" class="headpic">
+							<img src="${user.uimage }" class="headpic">
 						</div>
 						<span>预览头像</span>
 					</div>
 					<div class="border-line"></div>
 					<div class="img-preview-wrap">
 						<div class="preview-wrap">
-							<img src="" >
+							<img src="${user.uimage }"  class="headpic">
 						</div>
 						<span>当前头像</span>
 					</div>

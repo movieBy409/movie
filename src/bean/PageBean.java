@@ -3,7 +3,7 @@ package bean;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PageBean {
+public class PageBean<T>{
 	    //当前页
 		private int currentPage;
 		
@@ -18,7 +18,7 @@ public class PageBean {
 		
 		//每页显示的数据
 		
-		private List<Movie> movietList = new ArrayList<Movie>();
+		private List<T> movietList = new ArrayList<T>();
 		public int getCurrentPage() {
 			return currentPage;
 		}
@@ -43,10 +43,12 @@ public class PageBean {
 		public void setTotalPage(int totalPage) {
 			this.totalPage = totalPage;
 		}
-		public List<Movie> getMovietList() {
+		public List<T> getMovietList() {
 			return movietList;
 		}
-		public void setMovietList(List<Movie> movietList) {
+		public void setMovietList(List<T> movietList) {
 			this.movietList = movietList;
 		}
+
+
 }

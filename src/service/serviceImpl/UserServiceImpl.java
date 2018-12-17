@@ -111,4 +111,11 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	@Override
+	public User userByUid(String uid) {
+		String sql="select * from user where uid=?";
+		User user = DBHelper.unique(sql, User.class,uid);
+		return user;
+	}
+
 }

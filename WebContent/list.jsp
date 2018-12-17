@@ -29,30 +29,29 @@
     </div>
     <table  style="font-size: 18px ;" class="table table-hover text-center">
       <tr>
-        <th width="100" style="text-align:left; padding-left:20px;">ID</th>
-        <th width="5%">名字</th>
+        <th width="100" style="text-align:left; padding-left:20px;">编号</th>
+        <th width="12%">名字</th>
         <th>图片</th>
-        <th>简介</th>
+        <th width="25%">简介</th>
         <th >属性</th>
-        <th >分类名称</th>
+        <th width="7%">分类名称</th>
         <th width="10%">更新时间</th>
         <th width="310">操作</th>
       </tr>
       <volist name="list" id="vo">
       
      <c:forEach items="${page.movietList}" var="movie">
-     
 		       <tr id="${movie.mid }">
 		          <td style="text-align:left; padding-left:20px;">
-		          <%-- <input type="checkbox" name="mid" value="${movie.mid }" /> --%>
 		           ${movie.mid }</td>
-		          <td><input type="text" name="mname" value="${movie.mname }" style="width:120px; text-align:center; border:1px solid #ddd; padding:7px 0;" /></td>
+		          <td>${movie.mname }</td>
 		          <td width="10%"><img src="${movie.mimage }" alt="" width="90" height="90px" /></td>
-		          <td>${movie.introduction }</td>
+		          <td >${movie.introduction }</td>
 		          <td><font color="#00CC99">正在热播</font></td>
 		          <td >${movie.type }</td>
-		          <td>${movie.mdate }</td>
-		          <td><div class="button-group">  <a class="button border-red" href="javascript:void(0)" onclick="return del('${movie.mid}')"><span class="icon-trash-o"></span> 删除</a> </div></td>
+		          <td >${movie.mdate }</td>
+		          <td><div class="button-group">  <a class="button border-red" href="javascript:void(0)" onclick="return del('${movie.mid}')">
+		          <span class="icon-trash-o"></span> 删除</a> </div></td>
 		        </tr>
 		        
      </c:forEach>

@@ -79,8 +79,6 @@
 									<a href="#"><i class="icon-magnifier icons"></i></a>
 								</div>
 								<div class="header__account">
-								
-								
 								<c:choose>
 								     <c:when test="${! empty sessionScope.user.uid }">
 								  	   <a href="user?oper=editInfo&uid=${sessionScope.user.uid }"   ><i class="icon-user icons"></i></a>

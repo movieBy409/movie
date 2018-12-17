@@ -112,10 +112,31 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public List<Order> allOder() {
-		String sql="select * from order";
-		List<Order> allOder = DBHelper.select(sql, Order.class);
-		return allOder;
+	public List<Order> allOrder() {
+		/**
+		 * 获得所有订单
+		 */
+		String sql="select * from order1";
+		List<Order> allOrder = DBHelper.select(sql, Order.class);
+		return allOrder;
+	}
+
+	@Override
+	public List<Order> pageOrder(int index, int currentCount) {
+		/**
+		 * 订单分页处理
+		 */
+		String sql="select * from order1 limit ?,?";
+		List<Order> pageOrder = DBHelper.select(sql, Order.class,index,currentCount);
+		return pageOrder;
+	}
+
+	@Override
+	public void delOder(String oid) {
+		/**
+		 * 删除订单
+		 */
+		DBHelper.update("DELETE FROM order1 WHERE oid=?", oid);
 	}
 
 	@Override

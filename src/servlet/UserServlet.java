@@ -95,11 +95,12 @@ public class UserServlet extends HttpServlet {
 				}
 			}
 		}else if("editInfo".equals(oper)){
-			
+			String uid =req.getParameter("uid");
+			User user = userService.userByUid(uid);
+			req.setAttribute("user", user);
 			req.getRequestDispatcher("editInfo.jsp").forward(req, resp);
 			return ;
 		}else if("updateInfo".equals(oper)){
-			
 			
 			User user=new User();
 			

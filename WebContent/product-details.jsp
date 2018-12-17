@@ -104,7 +104,15 @@
 										<a href="#"><i class="icon-magnifier icons"></i></a>
 									</div>
 									<div class="header__account">
-										<a href="#"><i class="icon-user icons"></i></a>
+										<c:choose>
+											<c:when test="${! empty sessionScope.user.uid }">
+												<a href="user?oper=editInfo&uid=${sessionScope.user.uid }"><i
+													class="icon-user icons"></i></a>
+											</c:when>
+											<c:otherwise>
+												<a href="login.html"><i class="icon-user icons"></i></a>
+											</c:otherwise>
+										</c:choose>
 									</div>
 									<div class="htc__shopping__cart">
 										<a class="cart__menu" href="#"><i

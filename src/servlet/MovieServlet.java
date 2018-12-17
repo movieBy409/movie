@@ -119,7 +119,7 @@ public class MovieServlet extends HttpServlet {
 			req.getRequestDispatcher("product-details.jsp").forward(req, resp);
 		} else if ("findmovie".equals(oper)) {
 			// 通过电影名字搜索
-			PageBean pagemovie = new PageBean();
+			PageBean<Movie> pagemovie = new PageBean<Movie>();
 			int currentCount = 9;// 每页的个数
 			String currentPageStr = req.getParameter("currentPage");
 			if (currentPageStr == null)
@@ -139,7 +139,7 @@ public class MovieServlet extends HttpServlet {
 		} else if ("movietype".equals(oper)) {
 			// 通过电影类型搜素
 			// 分页展示所有电影
-			PageBean pagemovie = new PageBean();
+			PageBean<Movie> pagemovie = new PageBean<Movie>();
 			int currentCount = 9;// 每页的个数
 			String currentPageStr = req.getParameter("currentPage");
 			if (currentPageStr == null)
@@ -158,7 +158,7 @@ public class MovieServlet extends HttpServlet {
 			req.setAttribute("allmovie", pagemovie);
 			req.getRequestDispatcher("product-grid.jsp").forward(req, resp);
 		} else if ("movieamount".equals(oper)) {
-			PageBean pagemovie = new PageBean();
+			PageBean<Movie> pagemovie = new PageBean<Movie>();
 			int currentCount = 9;// 每页的个数
 			String currentPageStr = req.getParameter("currentPage");
 			if (currentPageStr == null)
