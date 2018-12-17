@@ -29,35 +29,53 @@
     <table class="table table-hover text-center">
       <tr>
         <th width="120">ID</th>
-        <th>昵称</th>       
-        <th>电话</th>
-        <th>留言电影</th>
-        <th width="30%">留言内容</th>
-        <th width="120">留言时间</th>
+        <th>订单号</th>       
+        <th width="10%">电影图片</th>
+        <th>电影名称</th>
+        <th>电影价格</th>
+        <th width="120">订单时间</th>
         <th>操作</th>       
       </tr>      
-        <c:forEach items="" var="message" varStatus="vs" > 
+        <c:forEach items="${pagebean.movietList}" var="order" varStatus="vs" > 
 	        <tr>
-	          <td><input type="checkbox" name="id[]" value="1" /> 1</td>
-	          <td>神夜</td>
-	          <td>13420925611</td> 
-	           <td>深圳市民治街道</td>         
-	          <td>这是一套后台UI，喜欢的朋友请多多支持谢谢。</td>
-	          <td>2016-07-01</td>
+	          <td><input type="checkbox" name="id[]" value="1" /> ${vs.count }</td>
+	          <td>${order.oid }</td>
+	          <td width="10%"><img src="${order.mimage } " alt="" width="70px" height="70px" /></td> 
+	          <td>${order.mname }</td> 
+	          <td>$${order.price }</td>        
+	          <td>${order.odate }</td>
 	          <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
 	        </tr>
         </c:forEach>
         
       <tr>
         <td colspan="8">
-        <div class="pagelist"> 
-	        <a href="">上一页</a> 
-	        <span class="current">1</span>
-	        <a href="">2</a>
-	        <a href="">3</a>
-	        <a href="">下一页</a>
-	        <a href="">尾页</a>
-         </div>
+	        <div class="pagelist"> 
+	           <!-- 前一页按钮 -->
+				<c:if test="${pagebean.currentPage==1 }">
+					<a href="javascript:void(0);">上一页</a>
+				</c:if>
+				<c:if test="${pagebean.currentPage!=1 }">
+                   <a href="backstage?oper=order&currentPage=${pagebean.currentPage-1 }">上一页</a>
+				</c:if>	
+		        
+		        <c:forEach  begin="1" end="${pagebean.totalPage }" var="page">
+			        <c:if test="${pagebean.currentPage==page }">
+							<span class="current">${page}</span>
+					</c:if>
+					<c:if test="${pagebean.currentPage!=page }">
+					  <a href="backstage?oper=order&currentPage=${page}">${page}</a>
+					</c:if>
+		        </c:forEach>
+		         <!-- 后一页按钮 -->
+                    <c:if test="${pagebean.currentPage==pagebean.totalPage }">
+                          <a href="javascript:void(0);">下一页</a>
+                   </c:if>
+                   <c:if test="${pagebean.currentPage!=pagebean.totalPage }">
+                    <a href="backstage?oper=order&currentPage=${pagebean.currentPage+1 }">下一页</a>
+                    </c:if>
+		        <a href="backstage?oper=order&currentPage=${pagebean.totalPage}">尾页</a>
+	         </div>
         </td>
       </tr>
     </table>

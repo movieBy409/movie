@@ -110,10 +110,17 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public List<Order> allOder() {
-		String sql="select * from order";
-		List<Order> allOder = DBHelper.select(sql, Order.class);
-		return allOder;
+	public List<Order> allOrder() {
+		String sql="select * from order1";
+		List<Order> allOrder = DBHelper.select(sql, Order.class);
+		return allOrder;
+	}
+
+	@Override
+	public List<Order> pageOrder(int index, int currentCount) {
+		String sql="select * from order1 limit ?,?";
+		List<Order> pageOrder = DBHelper.select(sql, Order.class,index,currentCount);
+		return pageOrder;
 	}
 
 

@@ -16,5 +16,6 @@ public interface MovieService {
 	Movie movie(String mid);
 	List<MessageAndUser> board(String movieid);
 	List<Order> movieOrder(Long uid);
-    List<Order> allOder();
+	List<Order> allOrder();
+	List<Order> pageOrder(int index, int currentCount);
 }
