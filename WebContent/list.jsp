@@ -20,7 +20,7 @@
     <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
-        <li> <a class="button border-main icon-plus-square-o" href="add.jsp"> 添加内容</a> </li>
+        <li> <a class="button border-main icon-plus-square-o" href="add.jsp"> 添加电影</a> </li>
         <li>搜索：</li>
         <li>
           <input type="text" value="${key }" placeholder="请输入搜索关键字" id="searchkey" name="key" class="input" style="width:250px; line-height:17px;display:inline-block" />
@@ -36,7 +36,7 @@
         <th >属性</th>
         <th width="7%">分类名称</th>
         <th width="10%">更新时间</th>
-        <th width="310">操作</th>
+        <th width="8%">操作</th>
       </tr>
       <volist name="list" id="vo">
       

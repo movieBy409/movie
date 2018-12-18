@@ -44,7 +44,7 @@ $(function(){
 });
 </script>
 <div class="admin">
-  <iframe scrolling="auto" rameborder="0" src="backstage?oper=movielist" name="right" width="100%" height="100%"></iframe>
+  <iframe scrolling="auto" rameborder="0" src="about.html" name="right" width="100%" height="100%"></iframe>
 </div>
 </body>
 </html>

@@ -13,7 +13,7 @@ import service.MovieService;
 
 public class MovieServiceImpl implements MovieService {
 	//每页显示的 页数
-	private int currentCount =3;
+	private int currentCount =2;
 	@Override
 	/**
 	 * 主页TOP8电影信息的获取
@@ -182,7 +182,7 @@ public class MovieServiceImpl implements MovieService {
 	@Override
 	public PageBean searchByKey(String key,String currentPage) {
 		/**
-		 *  蘑菇查询
+		 *  模糊查询
 		 */
 		int pageNumber=1;
 		
@@ -203,9 +203,16 @@ public class MovieServiceImpl implements MovieService {
 		List <Movie> list1=DBHelper.select("select * from movie where mname like '%"+key+"%' ", Movie.class);
 		page.setCurrentPage(Integer.parseInt(currentPage));
 		page.setTotalPage((list1.size()%currentCount ==0)?(list1.size()/currentCount):(list1.size()/currentCount +1));
-
-		
 		return page;
+	}
+	@Override
+	public void addMovie(Movie movie) {
+		/**
+		 * 后台添加电影
+		 */
+		String sql ="insert into movie (mname,introduction,price,mtime,mimage,director,starring,type,area,language,mdate) values(?,?,?,?,?,?,?,?,?,?,?)";
+		DBHelper.insert(sql, movie.getMname(),movie.getIntroduction(),movie.getPrice(),movie.getMtime(),movie.getMimage(),movie.getDirector(),
+				   movie.getStarring(),movie.getType(),movie.getArea(),movie.getLanguage(),movie.getMdate());
 	}
 
 

@@ -55,11 +55,9 @@
 					
 						出生日期：<input id="date" type="date"  value="${user.birthday }" />
 					</div>
-					
 					<div style="margin-left: 24px;">
 						<span>个人金额：${user.money }</span> 
 					</div>
-					
 					<button type="button" class="el-button el-button--primary" ><span>保存</span></button>
 				</form>
 			</div>

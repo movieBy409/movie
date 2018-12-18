@@ -181,6 +181,7 @@
 								</div>
 							</div>
 						</c:forEach>
+						<br>
 						<ul class="shopping__btn">
 							<li class="shp__checkout"><a href="#">清空所有订单</a></li>
 						</ul>
@@ -358,7 +359,6 @@
 									<img src="${t.user.uimage }" />
 								</div>
 								<div class="user-name">${t.user.uname }</div>
-
 								<div class="user-msg">${t.message.msg }</div>
 								<div class="user-time">${t.message.mdate }</div>
 							</li>
