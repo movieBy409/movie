@@ -247,6 +247,8 @@
 											<img src="${movie.mimage }" alt="product images">
 										</a>
 									</div>
+									
+									
 									<div class="fr__hover__info">
 										<ul class="product__action">
 											<li><a href="#"><i class="icon-heart icons"></i></a></li><!-- 收藏按钮-->

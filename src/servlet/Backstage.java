@@ -29,6 +29,10 @@ public class Backstage extends HttpServlet {
 		if (oper == null || "".equals(oper)) {
 			// 用户 不输入oper
 		}
+		if("upload".equals(oper)){
+			
+		}
+		
 		if ("movielist".equals(oper)) {
 			String currentPage = req.getParameter("currentPage");
 			if (currentPage == null || "".equals(currentPage)) {
@@ -37,6 +41,7 @@ public class Backstage extends HttpServlet {
 			PageBean page=movieService.pageMovieToBack(currentPage);
 			req.setAttribute("movielist", "movielist");
 			req.setAttribute("page",page);
+			
 			req.setAttribute("currentPage", currentPage);
 			req.getRequestDispatcher("list.jsp").forward(req, resp);
 			return;
