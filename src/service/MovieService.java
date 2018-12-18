@@ -17,7 +17,7 @@ public interface MovieService {
 	Movie movie(String mid);
 	List<MessageAndUser> board(String movieid);
 	List<Order> movieOrder(Long uid);
-
+	List<Order> allOrder();
 	List<Order> pageOrder(int index, int currentCount);
 	void delOder(String oid);
     
@@ -27,6 +27,7 @@ public interface MovieService {
     
     PageBean searchByKey(String key,String currentPage);
     
-	List<Order> allOrder();
+    void addMovie(Movie movie);
+
     
 }

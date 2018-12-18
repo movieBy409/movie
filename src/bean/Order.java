@@ -8,6 +8,13 @@ public class Order {
     private String mname;
     private String mimage;
     private String price;
+    private String uname;
+	public String getUname() {
+		return uname;
+	}
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
 	public String getPrice() {
 		return price;
 	}

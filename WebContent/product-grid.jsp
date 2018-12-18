@@ -150,6 +150,7 @@
 								</div>
 							</div>
 						</c:forEach>
+						<br>
 					</div>
 					<ul class="shopping__btn">
 						<li class="shp__checkout"><a href="#">清空全部订单</a></li>

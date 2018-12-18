@@ -61,8 +61,9 @@ public class UserServiceImpl implements UserService {
 			Date date = new Date();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Movie movie = (Movie) DBHelper.unique("select * from movie where mid=?", Movie.class, mid);
+			User user = DBHelper.unique("select * from user where uid=?", User.class,uid);
 			String format = sdf.format(date);
-			String sql = "insert into order1 (uid,mid,odate,mname,mimage,price) values (?,?,?,?,?,?)";
+			String sql = "insert into order1 (uid,mid,odate,mname,mimage,price,uname) values (?,?,?,?,?,?,?)";
 			PreparedStatement prestmt = conn.prepareStatement(sql);
 			prestmt.setString(1, uid);
 			prestmt.setString(2, mid);
@@ -70,6 +71,7 @@ public class UserServiceImpl implements UserService {
 			prestmt.setString(4, movie.getMname());
 			prestmt.setString(5, movie.getMimage());
 			prestmt.setString(6, price);
+			prestmt.setString(7,user.getUname());
 			prestmt.execute();
 		} catch (Exception e) {
 			isTranferSuccess = false;
