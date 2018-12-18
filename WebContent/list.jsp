@@ -59,6 +59,8 @@
 		        <td colspan="8">
 		        <div class="pagelist">
 		        
+		        
+		        <input type="hidden" id="turl" value="<c:if test="${movielist == 'movielist' }">oper=movielist</c:if><c:if test="${search=='search' }">oper=search&key=${key }</c:if>"    >
 		        <c:choose>
 		             <c:when test="${ currentPage==1 }">
 		                    <span onclick="tishi1()">上一页</span>
@@ -151,7 +153,8 @@ function changesearch(){
 //单个删除
 function del(mid){
 	if(confirm("您确定要删除吗?")){
-    	
+    	var turl=$("#turl").val();
+    	console.log(turl)
 		   $.ajax({
             type: "POST",
             url: "backstage?oper=del",
@@ -161,10 +164,10 @@ function del(mid){
                 if(data=="0"){
                 	alert("系统繁忙");
                 }else {
-                	window.location.href="backstage?oper=movielist";
+                	window.location.href="backstage?"+turl;
                 }
             }
-        });
+        }); 
 	}
 }
 

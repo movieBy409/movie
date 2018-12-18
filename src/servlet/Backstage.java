@@ -49,8 +49,10 @@ public class Backstage extends HttpServlet {
 			}
 			
 			String key=req.getParameter("key");
+			if(key!=null){
+				key = new String(key.getBytes("ISO-8859-1"), "utf-8").toString();
+			}
 			
-			key = new String(key.getBytes("ISO-8859-1"), "utf-8").toString();
 			req.setAttribute("search", "search");
 			if(key!=null){
 				req.setAttribute("key", key);

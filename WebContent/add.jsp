@@ -20,7 +20,7 @@
     <form method="post" class="form-x" action="">  
       <div class="form-group">
         <div class="label">
-          <label>标题：</label>
+          <label>电影名称：</label>
         </div>
         <div class="field">
           <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题" />
@@ -32,7 +32,7 @@
           <label>图片：</label>
         </div>
         <div class="field">
-          <input type="text" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
+          <input type="file" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
           <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
           <div class="tipss">图片尺寸：500*500</div>
         </div>
@@ -68,57 +68,20 @@
       </if>
       <div class="form-group">
         <div class="label">
-          <label>描述：</label>
+          <label>内容简介：</label>
         </div>
         <div class="field">
           <textarea class="input" name="note" style=" height:90px;"></textarea>
           <div class="tips"></div>
         </div>
       </div>
-      <div class="form-group">
-        <div class="label">
-          <label>内容：</label>
-        </div>
-        <div class="field">
-          <textarea name="content" class="input" style="height:450px; border:1px solid #ddd;"></textarea>
-          <div class="tips"></div>
-        </div>
-      </div>
+      
      
       <div class="clear"></div>
-      <div class="form-group">
-        <div class="label">
-          <label>关键字标题：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_title" value="" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>内容关键字：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_keywords" value=""/>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>关键字描述：</label>
-        </div>
-        <div class="field">
-          <textarea type="text" class="input" name="s_desc" style="height:80px;"></textarea>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>排序：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
-          <div class="tips"></div>
-        </div>
-      </div>
+      
+      
+     
+      
       <div class="form-group">
         <div class="label">
           <label>发布时间：</label>
@@ -131,7 +94,7 @@
       </div>
       <div class="form-group">
         <div class="label">
-          <label>作者：</label>
+          <label>主演：</label>
         </div>
         <div class="field">
           <input type="text" class="input w50" name="authour" value=""  />
